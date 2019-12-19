@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DBFB2F2823AC340D001027D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB2F2723AC340D001027D3 /* AppDelegate.swift */; };
+		DBFB2F2A23AC340D001027D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB2F2923AC340D001027D3 /* SceneDelegate.swift */; };
+		DBFB2F2C23AC340D001027D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB2F2B23AC340D001027D3 /* ContentView.swift */; };
+		DBFB2F2E23AC340E001027D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBFB2F2D23AC340E001027D3 /* Assets.xcassets */; };
+		DBFB2F3123AC340E001027D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBFB2F3023AC340E001027D3 /* Preview Assets.xcassets */; };
+		DBFB2F3423AC340E001027D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBFB2F3223AC340E001027D3 /* LaunchScreen.storyboard */; };
+		DBFB2F3F23AC340E001027D3 /* PandinoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB2F3E23AC340E001027D3 /* PandinoTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DBFB2F3B23AC340E001027D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBFB2F1C23AC340D001027D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBFB2F2323AC340D001027D3;
+			remoteInfo = Pandino;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DBFB2F2423AC340D001027D3 /* Pandino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pandino.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBFB2F2723AC340D001027D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DBFB2F2923AC340D001027D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DBFB2F2B23AC340D001027D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DBFB2F2D23AC340E001027D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBFB2F3023AC340E001027D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DBFB2F3323AC340E001027D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DBFB2F3523AC340E001027D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBFB2F3A23AC340E001027D3 /* PandinoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PandinoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBFB2F3E23AC340E001027D3 /* PandinoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandinoTests.swift; sourceTree = "<group>"; };
+		DBFB2F4023AC340E001027D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DBFB2F2123AC340D001027D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBFB2F3723AC340E001027D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DBFB2F1B23AC340D001027D3 = {
+			isa = PBXGroup;
+			children = (
+				DBFB2F2623AC340D001027D3 /* Pandino */,
+				DBFB2F3D23AC340E001027D3 /* PandinoTests */,
+				DBFB2F2523AC340D001027D3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DBFB2F2523AC340D001027D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DBFB2F2423AC340D001027D3 /* Pandino.app */,
+				DBFB2F3A23AC340E001027D3 /* PandinoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DBFB2F2623AC340D001027D3 /* Pandino */ = {
+			isa = PBXGroup;
+			children = (
+				DBFB2F2723AC340D001027D3 /* AppDelegate.swift */,
+				DBFB2F2923AC340D001027D3 /* SceneDelegate.swift */,
+				DBFB2F2B23AC340D001027D3 /* ContentView.swift */,
+				DBFB2F2D23AC340E001027D3 /* Assets.xcassets */,
+				DBFB2F3223AC340E001027D3 /* LaunchScreen.storyboard */,
+				DBFB2F3523AC340E001027D3 /* Info.plist */,
+				DBFB2F2F23AC340E001027D3 /* Preview Content */,
+			);
+			path = Pandino;
+			sourceTree = "<group>";
+		};
+		DBFB2F2F23AC340E001027D3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DBFB2F3023AC340E001027D3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DBFB2F3D23AC340E001027D3 /* PandinoTests */ = {
+			isa = PBXGroup;
+			children = (
+				DBFB2F3E23AC340E001027D3 /* PandinoTests.swift */,
+				DBFB2F4023AC340E001027D3 /* Info.plist */,
+			);
+			path = PandinoTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DBFB2F2323AC340D001027D3 /* Pandino */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBFB2F4323AC340E001027D3 /* Build configuration list for PBXNativeTarget "Pandino" */;
+			buildPhases = (
+				DBFB2F2023AC340D001027D3 /* Sources */,
+				DBFB2F2123AC340D001027D3 /* Frameworks */,
+				DBFB2F2223AC340D001027D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pandino;
+			productName = Pandino;
+			productReference = DBFB2F2423AC340D001027D3 /* Pandino.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DBFB2F3923AC340E001027D3 /* PandinoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBFB2F4623AC340E001027D3 /* Build configuration list for PBXNativeTarget "PandinoTests" */;
+			buildPhases = (
+				DBFB2F3623AC340E001027D3 /* Sources */,
+				DBFB2F3723AC340E001027D3 /* Frameworks */,
+				DBFB2F3823AC340E001027D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBFB2F3C23AC340E001027D3 /* PBXTargetDependency */,
+			);
+			name = PandinoTests;
+			productName = PandinoTests;
+			productReference = DBFB2F3A23AC340E001027D3 /* PandinoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DBFB2F1C23AC340D001027D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Dani Tox";
+				TargetAttributes = {
+					DBFB2F2323AC340D001027D3 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					DBFB2F3923AC340E001027D3 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = DBFB2F2323AC340D001027D3;
+					};
+				};
+			};
+			buildConfigurationList = DBFB2F1F23AC340D001027D3 /* Build configuration list for PBXProject "Pandino" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DBFB2F1B23AC340D001027D3;
+			productRefGroup = DBFB2F2523AC340D001027D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DBFB2F2323AC340D001027D3 /* Pandino */,
+				DBFB2F3923AC340E001027D3 /* PandinoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DBFB2F2223AC340D001027D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBFB2F3423AC340E001027D3 /* LaunchScreen.storyboard in Resources */,
+				DBFB2F3123AC340E001027D3 /* Preview Assets.xcassets in Resources */,
+				DBFB2F2E23AC340E001027D3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBFB2F3823AC340E001027D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DBFB2F2023AC340D001027D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBFB2F2823AC340D001027D3 /* AppDelegate.swift in Sources */,
+				DBFB2F2A23AC340D001027D3 /* SceneDelegate.swift in Sources */,
+				DBFB2F2C23AC340D001027D3 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBFB2F3623AC340E001027D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBFB2F3F23AC340E001027D3 /* PandinoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBFB2F3C23AC340E001027D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBFB2F2323AC340D001027D3 /* Pandino */;
+			targetProxy = DBFB2F3B23AC340E001027D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DBFB2F3223AC340E001027D3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBFB2F3323AC340E001027D3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DBFB2F4123AC340E001027D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DBFB2F4223AC340E001027D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DBFB2F4423AC340E001027D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Pandino/Preview Content\"";
+				DEVELOPMENT_TEAM = R779A64KR9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Pandino/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.danitox.Pandino;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DBFB2F4523AC340E001027D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Pandino/Preview Content\"";
+				DEVELOPMENT_TEAM = R779A64KR9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Pandino/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.danitox.Pandino;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DBFB2F4723AC340E001027D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R779A64KR9;
+				INFOPLIST_FILE = PandinoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.danitox.PandinoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pandino.app/Pandino";
+			};
+			name = Debug;
+		};
+		DBFB2F4823AC340E001027D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R779A64KR9;
+				INFOPLIST_FILE = PandinoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.danitox.PandinoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pandino.app/Pandino";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DBFB2F1F23AC340D001027D3 /* Build configuration list for PBXProject "Pandino" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBFB2F4123AC340E001027D3 /* Debug */,
+				DBFB2F4223AC340E001027D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBFB2F4323AC340E001027D3 /* Build configuration list for PBXNativeTarget "Pandino" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBFB2F4423AC340E001027D3 /* Debug */,
+				DBFB2F4523AC340E001027D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBFB2F4623AC340E001027D3 /* Build configuration list for PBXNativeTarget "PandinoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBFB2F4723AC340E001027D3 /* Debug */,
+				DBFB2F4823AC340E001027D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DBFB2F1C23AC340D001027D3 /* Project object */;
+}
