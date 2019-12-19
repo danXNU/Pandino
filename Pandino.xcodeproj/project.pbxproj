@@ -3,17 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		DBFB2F2823AC340D001027D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB2F2723AC340D001027D3 /* AppDelegate.swift */; };
 		DBFB2F2A23AC340D001027D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB2F2923AC340D001027D3 /* SceneDelegate.swift */; };
-		DBFB2F2C23AC340D001027D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB2F2B23AC340D001027D3 /* ContentView.swift */; };
+		DBFB2F2C23AC340D001027D3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB2F2B23AC340D001027D3 /* MainView.swift */; };
 		DBFB2F2E23AC340E001027D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBFB2F2D23AC340E001027D3 /* Assets.xcassets */; };
 		DBFB2F3123AC340E001027D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBFB2F3023AC340E001027D3 /* Preview Assets.xcassets */; };
 		DBFB2F3423AC340E001027D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBFB2F3223AC340E001027D3 /* LaunchScreen.storyboard */; };
 		DBFB2F3F23AC340E001027D3 /* PandinoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB2F3E23AC340E001027D3 /* PandinoTests.swift */; };
+		DBFB2F4C23AC36A6001027D3 /* DXNetworkManager in Frameworks */ = {isa = PBXBuildFile; productRef = DBFB2F4B23AC36A6001027D3 /* DXNetworkManager */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +31,7 @@
 		DBFB2F2423AC340D001027D3 /* Pandino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pandino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBFB2F2723AC340D001027D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBFB2F2923AC340D001027D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DBFB2F2B23AC340D001027D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DBFB2F2B23AC340D001027D3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DBFB2F2D23AC340E001027D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBFB2F3023AC340E001027D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DBFB2F3323AC340E001027D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBFB2F4C23AC36A6001027D3 /* DXNetworkManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,12 +81,8 @@
 		DBFB2F2623AC340D001027D3 /* Pandino */ = {
 			isa = PBXGroup;
 			children = (
-				DBFB2F2723AC340D001027D3 /* AppDelegate.swift */,
-				DBFB2F2923AC340D001027D3 /* SceneDelegate.swift */,
-				DBFB2F2B23AC340D001027D3 /* ContentView.swift */,
-				DBFB2F2D23AC340E001027D3 /* Assets.xcassets */,
-				DBFB2F3223AC340E001027D3 /* LaunchScreen.storyboard */,
-				DBFB2F3523AC340E001027D3 /* Info.plist */,
+				DBFB2F4923AC3423001027D3 /* SupportingFiles */,
+				DBFB2F2B23AC340D001027D3 /* MainView.swift */,
 				DBFB2F2F23AC340E001027D3 /* Preview Content */,
 			);
 			path = Pandino;
@@ -107,6 +105,18 @@
 			path = PandinoTests;
 			sourceTree = "<group>";
 		};
+		DBFB2F4923AC3423001027D3 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DBFB2F3523AC340E001027D3 /* Info.plist */,
+				DBFB2F3223AC340E001027D3 /* LaunchScreen.storyboard */,
+				DBFB2F2D23AC340E001027D3 /* Assets.xcassets */,
+				DBFB2F2923AC340D001027D3 /* SceneDelegate.swift */,
+				DBFB2F2723AC340D001027D3 /* AppDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,6 +133,9 @@
 			dependencies = (
 			);
 			name = Pandino;
+			packageProductDependencies = (
+				DBFB2F4B23AC36A6001027D3 /* DXNetworkManager */,
+			);
 			productName = Pandino;
 			productReference = DBFB2F2423AC340D001027D3 /* Pandino.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +186,9 @@
 				Base,
 			);
 			mainGroup = DBFB2F1B23AC340D001027D3;
+			packageReferences = (
+				DBFB2F4A23AC36A6001027D3 /* XCRemoteSwiftPackageReference "DXNetworkManager" */,
+			);
 			productRefGroup = DBFB2F2523AC340D001027D3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -210,7 +226,7 @@
 			files = (
 				DBFB2F2823AC340D001027D3 /* AppDelegate.swift in Sources */,
 				DBFB2F2A23AC340D001027D3 /* SceneDelegate.swift in Sources */,
-				DBFB2F2C23AC340D001027D3 /* ContentView.swift in Sources */,
+				DBFB2F2C23AC340D001027D3 /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +382,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Pandino/Preview Content\"";
 				DEVELOPMENT_TEAM = R779A64KR9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Pandino/Info.plist;
+				INFOPLIST_FILE = Pandino/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,7 +402,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Pandino/Preview Content\"";
 				DEVELOPMENT_TEAM = R779A64KR9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Pandino/Info.plist;
+				INFOPLIST_FILE = Pandino/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,6 +489,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DBFB2F4A23AC36A6001027D3 /* XCRemoteSwiftPackageReference "DXNetworkManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DaniTox/DXNetworkManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DBFB2F4B23AC36A6001027D3 /* DXNetworkManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBFB2F4A23AC36A6001027D3 /* XCRemoteSwiftPackageReference "DXNetworkManager" */;
+			productName = DXNetworkManager;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DBFB2F1C23AC340D001027D3 /* Project object */;
 }
