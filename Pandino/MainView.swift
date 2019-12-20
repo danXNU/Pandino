@@ -14,8 +14,10 @@ struct MainView: View {
     
     @State var mostraErrore: Bool = false
     
-    @State var raggio : CGFloat = 100
-    @State var isPressed: Bool = false
+    @State var valoreLitri: Float = 0.0
+    @State var kmDiViaggio: Float = 0.0
+    
+    @State var risultato: Float = 0
     
     var body: some View {
         NavigationView {
@@ -27,36 +29,44 @@ struct MainView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 
+                Group {
+                    Text("Inserirsci il valore in Km di viaggio")
+                    Text("\(Int(self.kmDiViaggio)) Km")
+                        .offset(x: 0, y: 15)
+                    Slider(value: self.$kmDiViaggio, in: 0...500, step: 1)
+                }
+                .padding(.init(arrayLiteral: [.leading, .trailing]), 20)
+                .offset(x: 0, y: 50)
+                
                 Spacer()
                 
-                Circle()
-                .frame(width: raggio / 2, height: raggio / 2)
-                .foregroundColor(Color.red)
-                .onTapGesture {
-                    self.isPressed.toggle()
-                    withAnimation(Animation.spring()) {
-                        self.calcola()
-                    }
+                Button(action: calcola) {
+                    Text("Calcola")
                 }
                 
-                
+                Text("\(Int(risultato))")
                 Spacer()
             }
             .navigationBarTitle("Consumi")
         }
+    .navigationViewStyle(StackNavigationViewStyle())
         .alert(isPresented: $mostraErrore) { () -> Alert in
-            Alert(title: Text("Ecco il risultato"), message: Text("Suck my dick!"), dismissButton: Alert.Button.default(Text("Ok")))
+            Alert(title: Text("Ecco il risultato"), message: Text("\(Int(risultato))"), dismissButton: Alert.Button.default(Text("Ok")))
         }
         
     }
     
     func calcola() {
-        if (isPressed) {
-            raggio = 800
+        if tipoSelezionato == 0 {
+            let consumo1km = 6.6 / 100
+            risultato = Float(consumo1km) * kmDiViaggio
         } else {
-            raggio = 100
+            
         }
+        
+        mostraErrore.toggle()
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
