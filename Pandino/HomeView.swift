@@ -9,9 +9,15 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @State var isShowingWidget: Bool = true
+    
     var body: some View {
-        ConsumiWidgetView()
+        
+        ConsumiWidgetView(isShowing: self.$isShowingWidget)
         .frame(width: 500, height: 400)
+        .opacity(isShowingWidget ? 1.0 : 0.0)
+        .animation(.easeIn)
         
     }
 }
