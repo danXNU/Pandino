@@ -10,14 +10,32 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State var isShowingWidget: Bool = true
+    @State var isShowingWidget: Bool = false
     
     var body: some View {
         
-        ConsumiWidgetView(isShowing: self.$isShowingWidget)
-        .frame(width: 500, height: 400)
-        .opacity(isShowingWidget ? 1.0 : 0.0)
-        .animation(.easeIn)
+        
+        
+        ZStack {
+            Button(action: {
+                withAnimation(Animation.easeIn(duration: 0.3)) {
+                    self.isShowingWidget.toggle()
+                }
+                
+                
+            }) {
+                Text("Consumi")
+            }
+            
+            if isShowingWidget {
+                ConsumiWidgetView(isShowing: self.$isShowingWidget)
+                .frame(width: 500, height: 400)
+//                .opacity(isShowingWidget ? 1.0 : 0.0)
+                .animation(.easeIn)
+            }
+            
+            
+        }
         
     }
 }
