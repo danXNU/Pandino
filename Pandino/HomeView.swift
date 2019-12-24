@@ -28,10 +28,13 @@ struct HomeView: View {
             }
             
             if isShowingWidget {
-                ConsumiWidgetView(isShowing: self.$isShowingWidget)
+                Widget(isShowing: self.$isShowingWidget) {
+                    ConsumiWidgetView()
+                }
                 .frame(width: 500, height: 400)
-//                .opacity(isShowingWidget ? 1.0 : 0.0)
                 .animation(.easeIn)
+                
+                
             }
             
             

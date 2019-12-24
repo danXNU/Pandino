@@ -15,7 +15,7 @@ struct ConsumiWidgetView: View {
     @State var valoreLitri: Float = 0.0
     @State var kmDiViaggio: Float = 0.0
     
-    @Binding var isShowing: Bool
+//    @Binding var isShowing: Bool
     
     @State var dragAmount: CGSize = .zero
     
@@ -52,16 +52,16 @@ struct ConsumiWidgetView: View {
                 .padding(.init(arrayLiteral: [.leading, .trailing]), 20)
                 
                 Spacer()
-                Text(String(format: "%.1f", calcola()))
+                Text(String(format: "%.1f litri", calcola()))
                     .font(Font.largeTitle)
                 
                 Spacer()
             }
             
             // X button
-            CloseButton {
-                self.isShowing.toggle()
-            }
+//            CloseButton {
+//                self.isShowing.toggle()
+//            }
 
         }
 //        .offset(x: 0, y: dragAmount.height)

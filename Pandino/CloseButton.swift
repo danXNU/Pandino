@@ -17,6 +17,7 @@ struct CloseButton: View {
                 Button(action: { self.action?() }) {
                     Text("×")
                         .font(Font.largeTitle)
+                        .offset(x: 0.25, y: -2)
                 }
                 .padding(7)
                 .background(Color.black.opacity(0.5))
