@@ -11,9 +11,12 @@ import SwiftUI
 struct CarNavigationView: View {
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 20)
-                .foregroundColor(Color.white)
-                .shadow(radius: 20)
+            
+            Rectangle()
+                .foregroundColor(Color(UIColor.systemBackground))
+            .edgesIgnoringSafeArea(.all)
+                .shadow(color: Color.primary, radius: 20)
+                
             
             VStack {
                 Spacer()

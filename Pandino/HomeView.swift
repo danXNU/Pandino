@@ -15,13 +15,7 @@ struct HomeView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                Button(action: {
-                    withAnimation(Animation.easeIn(duration: 0.3)) {
-                        self.isShowingWidget.toggle()
-                    }
-                }) {
-                    Text("Consumi")
-                }
+                
                 
                 if self.isShowingWidget {
                     Widget(isShowing: self.$isShowingWidget) {
@@ -30,10 +24,23 @@ struct HomeView: View {
                     .frame(width: 500, height: 400)
                     .animation(.easeIn)
                 }
-                                
-                CarNavigationView()
+                  
+                HStack {
+                    CarNavigationView()
                     .frame(width: geo.size.width / 3)
-                    .shadow(radius: 10)
+//                    .shadow(radius: 10)
+                    
+                    //Spacer()
+
+                    //Map View
+                    MapView()
+                        .edgesIgnoringSafeArea(.all)
+//                    Rectangle()
+//                        .edgesIgnoringSafeArea(.all)
+//                        .foregroundColor(Color(UIColor.systemBackground))
+                }
+                
+                
        
             }
         }
