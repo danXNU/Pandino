@@ -28,13 +28,32 @@ struct CloseButton: View {
                 
                 Spacer()
             }
-            Spacer()
+//            Spacer()
         }
     }
 }
 
-struct CloseButton_Previews: PreviewProvider {
-    static var previews: some View {
-        CloseButton()
+struct WidgetBar: View {
+    @State var cornerRadius: CGFloat = 20
+    var title: String = ""
+    var closeAction : (() -> Void)? = nil
+    
+    
+    var body: some View {
+        VStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: cornerRadius)
+                .fill(Color(UIColor.systemBackground))
+                
+                Text(title)
+                    .font(Font.custom("Futura", size: 30).bold())
+                
+                CloseButton(action: closeAction)
+            }
+            
+            Divider()
+            
+            Spacer()
+        }
     }
 }

@@ -17,7 +17,7 @@ struct ConsumiWidgetView: View {
     
     var body: some View {
         VStack {
-            Spacer()
+//            Spacer()
             
             VStack {
                 Text("Inserisci il tipo di guida")

@@ -12,6 +12,13 @@ import SwiftUI
 enum WidgetType {
     case consumi
     case info
+    
+    var widgetBarTitle: String {
+        switch self {
+        case .consumi: return "Consumi"
+        case .info: return "Info"
+        }
+    }
 }
 
 class WidgetAgent: ObservableObject {

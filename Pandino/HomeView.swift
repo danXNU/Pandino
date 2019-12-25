@@ -31,7 +31,7 @@ struct HomeView: View {
                             ConsumiWidgetView()
                         }
                         .environmentObject(self.widgetAgent)
-                        .frame(width: 500, height: 400)
+                        .frame(width: 500, height: 500)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     } else if self.widgetAgent.selectedWidget == .info {
@@ -39,7 +39,7 @@ struct HomeView: View {
                             InfoWidget()
                         }
                         .environmentObject(self.widgetAgent)
-                        .frame(width: 500, height: 400)
+                        .frame(width: 500, height: 500)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                         

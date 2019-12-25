@@ -9,24 +9,31 @@
 import SwiftUI
 
 struct Widget<Content>: View where Content: View {
-
+    
     @EnvironmentObject var widgetAgent: WidgetAgent
     
     var type: WidgetType
+    var closeAction: (() -> Void)? = nil
     var content: () -> Content
-
+    
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 20)
-                .foregroundColor(Color(UIColor.systemBackground))
-                .shadow(color: Color(UIColor.label), radius: 20)
+        GeometryReader { geo in
+            ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                    .foregroundColor(Color(UIColor.systemBackground))
+                    .shadow(color: Color(UIColor.label), radius: 20)
+                
+                VStack {
+                    WidgetBar(cornerRadius: 20, title: self.type.widgetBarTitle, closeAction: self.closeAction == nil ? { self.widgetAgent.toggle(with: self.type)} : self.closeAction)
+                        .frame(height: 70)
+                    
+                    self.content()
+                        .frame(height: geo.size.height - 70)
+                }
             
-            self.content()
-            
-            CloseButton {
-                self.widgetAgent.toggle(with: self.type)
             }
         }
+        
     }
 }
