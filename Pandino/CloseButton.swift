@@ -16,11 +16,12 @@ struct CloseButton: View {
             HStack {
                 Button(action: { self.action?() }) {
                     Text("×")
-                        .font(Font.largeTitle)
+                        .foregroundColor(Color.primary)
+                        .font(Font.system(size: 40))
                         .offset(x: 0.25, y: -2)
                 }
                 .padding(7)
-                .background(Color.black.opacity(0.5))
+                .background(Color.gray.opacity(0.3))
                 .clipShape(Circle())
                 .foregroundColor(Color.white)
                 .offset(x: 10, y: 0)

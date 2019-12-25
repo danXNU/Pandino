@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct CarNavigationView: View {
+    
+    @Binding var isShowingWidget: Bool
+    @Binding var whatWidget: WidgetTypes
+    
     var body: some View {
         ZStack {
             
@@ -19,28 +23,49 @@ struct CarNavigationView: View {
                 
             
             VStack {
+                Text("T-Pandino")
+                    .font(Font.system(size: 65, weight: Font.Weight.medium, design: .default))
+                
                 Spacer()
                 
                 VStack {
                     Text("0")
-                        .font(Font.system(size: 50, weight: .bold, design: .default))
+                        .font(Font.system(size: 60, weight: .bold, design: .default))
                     
                     Text("Km/h")
+                        .font(Font.system(size: 30))
                 }
                 
-                Spacer()
+//                Spacer()
                 Image("fiat-panda")
                     .resizable()
                     .frame(width: 400, height: 300)
                 
                 Spacer()
+                
+                Button(action: { self.whatWidget = .consumi; self.isShowingWidget.toggle() }) {
+                    Text("Consumi")
+                        .font(Font.custom("Futura", size: 25))
+                        .foregroundColor(Color.primary)
+                }
+                .padding()
+                .background(Color.gray.opacity(0.3))
+                .clipShape(Capsule())
+                
+                Spacer()
+                
+                HStack {
+                    Image(systemName: "tv.music.note")
+                    .resizable()
+                    .foregroundColor(Color.gray.opacity(1.0))
+                    .frame(width: 50, height: 50)
+                    .offset(x: 20, y: 0)
+                    
+                    Spacer()
+                }
+                
+                
             }
         }
-    }
-}
-
-struct CarNavigationView_Previews: PreviewProvider {
-    static var previews: some View {
-        CarNavigationView()
     }
 }
