@@ -13,33 +13,30 @@ struct HomeView: View {
     @State var isShowingWidget: Bool = false
     
     var body: some View {
-        
-        
-        
-        ZStack {
-            Button(action: {
-                withAnimation(Animation.easeIn(duration: 0.3)) {
-                    self.isShowingWidget.toggle()
+        GeometryReader { geo in
+            ZStack {
+                Button(action: {
+                    withAnimation(Animation.easeIn(duration: 0.3)) {
+                        self.isShowingWidget.toggle()
+                    }
+                }) {
+                    Text("Consumi")
                 }
                 
-                
-            }) {
-                Text("Consumi")
-            }
-            
-            if isShowingWidget {
-                Widget(isShowing: self.$isShowingWidget) {
-                    ConsumiWidgetView()
+                if self.isShowingWidget {
+                    Widget(isShowing: self.$isShowingWidget) {
+                        ConsumiWidgetView()
+                    }
+                    .frame(width: 500, height: 400)
+                    .animation(.easeIn)
                 }
-                .frame(width: 500, height: 400)
-                .animation(.easeIn)
-                
-                
+                                
+                CarNavigationView()
+                    .frame(width: geo.size.width / 3)
+                    .shadow(radius: 10)
+       
             }
-            
-            
         }
-        
     }
 }
 
