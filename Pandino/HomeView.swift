@@ -43,6 +43,14 @@ struct HomeView: View {
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                         
+                    } else if self.widgetAgent.selectedWidget == .settings {
+                        Widget(type: .settings) {
+                            SettingsWidget()
+                        }
+                        .environmentObject(self.widgetAgent)
+                        .frame(width: geo.size.width / 1.5, height: geo.size.height / 1.3)
+                        .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
+                        .animation(.easeIn)
                     }
                     
                     

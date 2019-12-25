@@ -10,7 +10,32 @@ import SwiftUI
 
 struct InfoWidget: View {
     var body: some View {
-        Text("Info")
+        Form {
+            HStack {
+                Text("Sviluppatore")
+                    .font(.custom("Futura", size: 25)).bold()
+                    .foregroundColor(Color(UIColor.label))
+                    
+                Spacer()
+                Text("danXNU")
+                    .font(.custom("Futura", size: 25)).bold()
+                    .foregroundColor(Color(UIColor.secondaryLabel))
+            }
+            .frame(height: 60)
+            
+            HStack {
+                Text("Versione")
+                    .font(.custom("Futura", size: 25)).bold()
+                    .foregroundColor(Color(UIColor.label))
+                
+                Spacer()
+                
+                Text("0.0.1-alpha1")
+                .font(.custom("Futura", size: 25)).bold()
+                .foregroundColor(Color(UIColor.secondaryLabel))
+            }
+            .frame(height: 60)
+        }
     }
 }
 

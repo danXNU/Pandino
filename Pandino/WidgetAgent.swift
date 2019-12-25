@@ -12,11 +12,13 @@ import SwiftUI
 enum WidgetType {
     case consumi
     case info
+    case settings
     
     var widgetBarTitle: String {
         switch self {
         case .consumi: return "Consumi"
         case .info: return "Info"
+        case .settings: return "Impostazioni"
         }
     }
 }
