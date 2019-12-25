@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DB8E9C8123B3DE23004726DD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8023B3DE23004726DD /* MapView.swift */; };
-		DB8E9C8323B3E36A004726DD /* WidgetTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8223B3E36A004726DD /* WidgetTypes.swift */; };
+		DB8E9C8523B3ECB1004726DD /* WidgetAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */; };
+		DB8E9C8823B3F1A6004726DD /* InfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8723B3F1A6004726DD /* InfoWidget.swift */; };
 		DB96135823B188A6008BEC34 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96135723B188A6008BEC34 /* HomeView.swift */; };
 		DB96135A23B195B1008BEC34 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96135923B195B1008BEC34 /* CloseButton.swift */; };
 		DBDA411423B28A3B00EE40CD /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA411323B28A3B00EE40CD /* Widget.swift */; };
@@ -35,7 +36,8 @@
 
 /* Begin PBXFileReference section */
 		DB8E9C8023B3DE23004726DD /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		DB8E9C8223B3E36A004726DD /* WidgetTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTypes.swift; sourceTree = "<group>"; };
+		DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetAgent.swift; sourceTree = "<group>"; };
+		DB8E9C8723B3F1A6004726DD /* InfoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWidget.swift; sourceTree = "<group>"; };
 		DB96135723B188A6008BEC34 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DB96135923B195B1008BEC34 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		DBDA411323B28A3B00EE40CD /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
@@ -80,6 +82,16 @@
 			path = "Custom Views";
 			sourceTree = "<group>";
 		};
+		DB8E9C8623B3F172004726DD /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				DBFB2F2B23AC340D001027D3 /* ConsumiWidgetView.swift */,
+				DBDA411323B28A3B00EE40CD /* Widget.swift */,
+				DB8E9C8723B3F1A6004726DD /* InfoWidget.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
 		DBFB2F1B23AC340D001027D3 = {
 			isa = PBXGroup;
 			children = (
@@ -101,15 +113,14 @@
 		DBFB2F2623AC340D001027D3 /* Pandino */ = {
 			isa = PBXGroup;
 			children = (
+				DB8E9C8623B3F172004726DD /* Widgets */,
 				DB8E9C7F23B3DE0F004726DD /* Custom Views */,
 				DB96135923B195B1008BEC34 /* CloseButton.swift */,
 				DB96135723B188A6008BEC34 /* HomeView.swift */,
-				DBFB2F2B23AC340D001027D3 /* ConsumiWidgetView.swift */,
-				DBDA411323B28A3B00EE40CD /* Widget.swift */,
 				DBDA411523B2E3A400EE40CD /* CarNavigationView.swift */,
 				DBFB2F4923AC3423001027D3 /* SupportingFiles */,
 				DBFB2F2F23AC340E001027D3 /* Preview Content */,
-				DB8E9C8223B3E36A004726DD /* WidgetTypes.swift */,
+				DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */,
 			);
 			path = Pandino;
 			sourceTree = "<group>";
@@ -251,12 +262,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB96135A23B195B1008BEC34 /* CloseButton.swift in Sources */,
-				DB8E9C8323B3E36A004726DD /* WidgetTypes.swift in Sources */,
+				DB8E9C8823B3F1A6004726DD /* InfoWidget.swift in Sources */,
 				DB8E9C8123B3DE23004726DD /* MapView.swift in Sources */,
 				DBDA411623B2E3A400EE40CD /* CarNavigationView.swift in Sources */,
 				DBFB2F2823AC340D001027D3 /* AppDelegate.swift in Sources */,
 				DB96135823B188A6008BEC34 /* HomeView.swift in Sources */,
 				DBFB2F2A23AC340D001027D3 /* SceneDelegate.swift in Sources */,
+				DB8E9C8523B3ECB1004726DD /* WidgetAgent.swift in Sources */,
 				DBFB2F2C23AC340D001027D3 /* ConsumiWidgetView.swift in Sources */,
 				DBDA411423B28A3B00EE40CD /* Widget.swift in Sources */,
 			);

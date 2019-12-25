@@ -9,16 +9,19 @@
 import SwiftUI
 
 struct Widget<Content>: View where Content: View {
+
+    @EnvironmentObject var widgetAgent: WidgetAgent
     
-    @Binding var isShowing: Bool
+    var type: WidgetType
     var content: () -> Content
+
     
     var body: some View {
         ZStack {
             self.content()
             
             CloseButton {
-                self.isShowing.toggle()
+                self.widgetAgent.toggle(with: self.type)
             }
         }
     }

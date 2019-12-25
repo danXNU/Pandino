@@ -10,8 +10,7 @@ import SwiftUI
 
 struct CarNavigationView: View {
     
-    @Binding var isShowingWidget: Bool
-    @Binding var whatWidget: WidgetTypes
+    @EnvironmentObject var widgetAgent: WidgetAgent
     
     var body: some View {
         ZStack {
@@ -43,7 +42,7 @@ struct CarNavigationView: View {
                 
                 Spacer()
                 
-                Button(action: { self.whatWidget = .consumi; self.isShowingWidget.toggle() }) {
+                Button(action: { self.widgetAgent.toggle(with: .consumi) }) {
                     Text("Consumi")
                         .font(Font.custom("Futura", size: 25))
                         .foregroundColor(Color.primary)
@@ -60,6 +59,9 @@ struct CarNavigationView: View {
                     .foregroundColor(Color.gray.opacity(1.0))
                     .frame(width: 50, height: 50)
                     .offset(x: 20, y: 0)
+                        .onTapGesture {
+                            self.widgetAgent.toggle(with: .info)
+                    }
                     
                     Spacer()
                 }

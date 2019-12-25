@@ -9,15 +9,13 @@
 import SwiftUI
 
 struct HomeView: View {
-    
-    @State var isShowingWidget: Bool = false
-    @State var selectedWidget: WidgetTypes = .consumi
+    @EnvironmentObject var widgetAgent: WidgetAgent
     
     var body: some View {
         GeometryReader { geo in
             ZStack {
                 HStack {
-                    CarNavigationView(isShowingWidget: self.$isShowingWidget, whatWidget: self.$selectedWidget)
+                    CarNavigationView().environmentObject(self.widgetAgent)
                         .frame(width: geo.size.width / 3)
                     
                     //Map View
@@ -26,26 +24,33 @@ struct HomeView: View {
                 }
                 
                 
-                if self.isShowingWidget {
-                    self.SelectedWidget()
+                if self.widgetAgent.isShowingWidget {
+                
+                    if self.widgetAgent.selectedWidget == .consumi {
+                        Widget(type: .consumi) {
+                            ConsumiWidgetView()
+                        }
+                        .environmentObject(self.widgetAgent)
                         .frame(width: 500, height: 400)
+                        .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
+                    } else if self.widgetAgent.selectedWidget == .info {
+                        Widget(type: .info) {
+                            InfoWidget()
+                        }
+                        .environmentObject(self.widgetAgent)
+                        .frame(width: 500, height: 400)
+                        .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
+                        .animation(.easeIn)
+                        
+                    }
+                    
+                    
                 }
                 
             }
         }
     }
-    
-    func SelectedWidget() -> some View {
-        switch self.selectedWidget {
-        case .consumi:
-            return Widget(isShowing: self.$isShowingWidget) {
-                ConsumiWidgetView()
-            }
-            //        default: fatalError()
-        }
-    }
-    
 }
 
 struct HomeView_Previews: PreviewProvider {
