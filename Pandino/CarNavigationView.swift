@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct CarNavigationView: View {
-    
     @EnvironmentObject var widgetAgent: WidgetAgent
+    @State var areFariAccesi: Bool = false
     
     var body: some View {
         ZStack {
@@ -42,14 +42,36 @@ struct CarNavigationView: View {
                 
                 Spacer()
                 
-                Button(action: { self.widgetAgent.toggle(with: .consumi) }) {
-                    Text("Consumi")
-                        .font(Font.custom("Futura", size: 25))
-                        .foregroundColor(Color.primary)
+                
+                HStack {
+                    Spacer()
+                    
+                    Button(action: { self.widgetAgent.toggle(with: .consumi) }) {
+                        Text("Consumi")
+                            .font(Font.custom("Futura", size: 25))
+                            .foregroundColor(Color.primary)
+                    }
+                    .frame(width: 120)
+                    .padding()
+                    .background(Color.gray.opacity(0.3))
+                    .clipShape(Capsule())
+                    
+                    Spacer()
+                    
+                    Button(action: { self.areFariAccesi.toggle() }) {
+                        Text("Fari")
+                            .font(Font.custom("Futura", size: 25))
+                            .foregroundColor(Color.primary)
+                    }
+                    .frame(width: 120)
+                    .padding()
+                    .background(areFariAccesi ? .yellow : Color.gray.opacity(0.3))
+                    .clipShape(Capsule())
+                    .shadow(color: areFariAccesi ? .yellow : .clear, radius: areFariAccesi ? 10 : 0)
+                    
+                    Spacer()
                 }
-                .padding()
-                .background(Color.gray.opacity(0.3))
-                .clipShape(Capsule())
+                
                 
                 Spacer()
                 
