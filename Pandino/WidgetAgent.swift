@@ -30,7 +30,9 @@ class WidgetAgent: ObservableObject {
     private func showWidget(type: WidgetType) {
         self.selectedWidget = type
         self.isShowingWidget = true
-        self.widgetOffset = .zero
+        withAnimation(.spring()) {
+            self.widgetOffset = .zero
+        }
     }
     
     private func closeWidget() {

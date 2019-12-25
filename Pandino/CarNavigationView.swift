@@ -17,13 +17,13 @@ struct CarNavigationView: View {
             
             Rectangle()
                 .foregroundColor(Color(UIColor.systemBackground))
-            .edgesIgnoringSafeArea(.all)
-                .shadow(color: Color.primary, radius: 20)
+                .edgesIgnoringSafeArea(.all)
                 
             
             VStack {
                 Text("T-Pandino")
-                    .font(Font.system(size: 65, weight: Font.Weight.medium, design: .default))
+                    .font(Font.custom("Futura", size: 65))
+                    //.font(Font.system(size: 65, weight: Font.Weight.medium, design: .default))
                 
                 Spacer()
                 
@@ -59,11 +59,20 @@ struct CarNavigationView: View {
                     .foregroundColor(Color.gray.opacity(1.0))
                     .frame(width: 50, height: 50)
                     .offset(x: 20, y: 0)
-                        .onTapGesture {
-                            self.widgetAgent.toggle(with: .info)
+                    .onTapGesture {
+                        self.widgetAgent.toggle(with: .info)
                     }
                     
                     Spacer()
+                    
+                    Image(systemName: "info.circle")
+                    .resizable()
+                    .foregroundColor(Color.gray)
+                    .frame(width: 50, height: 50)
+                    .offset(x: -20, y: 0)
+                    .onTapGesture {
+                        self.widgetAgent.toggle(with: .info)
+                    }
                 }
                 
                 

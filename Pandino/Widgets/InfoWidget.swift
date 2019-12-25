@@ -10,15 +10,7 @@ import SwiftUI
 
 struct InfoWidget: View {
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 20)
-            .foregroundColor(Color.white)
-            
-            Text("Info")
-        }
-        
-        
-        
+        Text("Info")
     }
 }
 

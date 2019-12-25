@@ -18,6 +18,10 @@ struct Widget<Content>: View where Content: View {
     
     var body: some View {
         ZStack {
+            RoundedRectangle(cornerRadius: 20)
+                .foregroundColor(Color(UIColor.systemBackground))
+                .shadow(color: Color(UIColor.label), radius: 20)
+            
             self.content()
             
             CloseButton {
