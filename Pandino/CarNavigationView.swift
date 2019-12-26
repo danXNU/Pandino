@@ -21,9 +21,16 @@ struct CarNavigationView: View {
                 
             
             VStack {
-                Text("T-Pandino")
+                HStack {
+                    Image("tesla-logo")
+                        .resizable()
+                        .aspectRatio(1.0, contentMode: .fit)
+                        .accentColor(Color(UIColor.label))
+                        .frame(height: 55)
+                    
+                    Text("Pandino")
                     .font(Font.custom("Futura", size: 65))
-                    //.font(Font.system(size: 65, weight: Font.Weight.medium, design: .default))
+                }
                 
                 Spacer()
                 
