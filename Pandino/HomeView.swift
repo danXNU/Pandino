@@ -19,7 +19,7 @@ struct HomeView: View {
                         .frame(width: geo.size.width / 3)
                     
                     //Map View
-                    MapView()
+                    MapView().environmentObject(self.locationAgent)
                         .edgesIgnoringSafeArea(.all)
                 }
                 
@@ -31,7 +31,7 @@ struct HomeView: View {
                             ConsumiWidgetView()
                         }
                         .environmentObject(self.widgetAgent)
-                        .frame(width: 500, height: 500)
+                        .frame(width: geo.size.width / 2, height: geo.size.height / 2)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     } else if self.widgetAgent.selectedWidget == .info {
@@ -39,13 +39,13 @@ struct HomeView: View {
                             InfoWidget()
                         }
                         .environmentObject(self.widgetAgent)
-                        .frame(width: 500, height: 500)
+                        .frame(width: geo.size.width / 2, height: geo.size.height / 2)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                         
                     } else if self.widgetAgent.selectedWidget == .settings {
                         Widget(type: .settings) {
-                            SettingsWidget()
+                            SettingsWidget().environmentObject(self.locationAgent)
                         }
                         .environmentObject(self.widgetAgent)
                         .frame(width: geo.size.width / 1.5, height: geo.size.height / 1.3)
@@ -56,7 +56,7 @@ struct HomeView: View {
                             FariWidget()
                         }
                         .environmentObject(self.widgetAgent)
-                        .frame(width: geo.size.width / 1.5, height: geo.size.height / 1.3)
+                        .frame(width: geo.size.width / 2, height: geo.size.height / 2.1)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     }
