@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB6C437E23B8ED7A001A2E06 /* FariWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6C437D23B8ED7A001A2E06 /* FariWidget.swift */; };
 		DB8E9C8123B3DE23004726DD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8023B3DE23004726DD /* MapView.swift */; };
 		DB8E9C8523B3ECB1004726DD /* WidgetAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */; };
 		DB8E9C8823B3F1A6004726DD /* InfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8723B3F1A6004726DD /* InfoWidget.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB6C437D23B8ED7A001A2E06 /* FariWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FariWidget.swift; sourceTree = "<group>"; };
 		DB8E9C8023B3DE23004726DD /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetAgent.swift; sourceTree = "<group>"; };
 		DB8E9C8723B3F1A6004726DD /* InfoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWidget.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				DBDA411323B28A3B00EE40CD /* Widget.swift */,
 				DB8E9C8723B3F1A6004726DD /* InfoWidget.swift */,
 				DBD24B7D23B4265900DBB6FD /* SettingsWidget.swift */,
+				DB6C437D23B8ED7A001A2E06 /* FariWidget.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				DBD24B7E23B4265900DBB6FD /* SettingsWidget.swift in Sources */,
 				DB8E9C8123B3DE23004726DD /* MapView.swift in Sources */,
 				DBDA411623B2E3A400EE40CD /* CarNavigationView.swift in Sources */,
+				DB6C437E23B8ED7A001A2E06 /* FariWidget.swift in Sources */,
 				DBFB2F2823AC340D001027D3 /* AppDelegate.swift in Sources */,
 				DB96135823B188A6008BEC34 /* HomeView.swift in Sources */,
 				DBFB2F2A23AC340D001027D3 /* SceneDelegate.swift in Sources */,
