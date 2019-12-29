@@ -24,6 +24,19 @@ struct InfoWidget: View {
             .frame(height: 60)
             
             HStack {
+                Text("Sviluppatore 2")
+                    .font(.custom("Futura", size: 25)).bold()
+                    .foregroundColor(Color(UIColor.label))
+                
+                Spacer()
+                
+                Text("Dado224")
+                .font(.custom("Futura", size: 25)).bold()
+                .foregroundColor(Color(UIColor.secondaryLabel))
+            }
+            .frame(height: 60)
+            
+            HStack {
                 Text("Versione")
                     .font(.custom("Futura", size: 25)).bold()
                     .foregroundColor(Color(UIColor.label))

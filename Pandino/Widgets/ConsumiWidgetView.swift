@@ -57,9 +57,14 @@ struct ConsumiWidgetView: View {
         if tipoSelezionato == 0 {
             let consumo1km = 6.6 / 100
             return Float(consumo1km) * kmDiViaggio
+        } else if tipoSelezionato == 1 {
+            let consumo1km = 8.8 / 100
+            return Float(consumo1km) * kmDiViaggio
         } else {
-            return 0.0
+            let consumo1km = 8.4 / 100
+            return Float(consumo1km) * kmDiViaggio
         }
+    
     }
     
 }
