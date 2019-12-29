@@ -67,7 +67,7 @@ struct CarNavigationView: View {
                                 
                                 Spacer()
                                 
-                                Button(action: { self.areFariAccesi.toggle() }) {
+                                Button(action: { self.widgetAgent.toggle(with: .fari) }) {
                                     Text("Fari")
                                         .font(Font.custom("Futura", size: 25))
                                         .foregroundColor(Color.primary)

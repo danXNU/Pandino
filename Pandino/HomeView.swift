@@ -51,6 +51,14 @@ struct HomeView: View {
                         .frame(width: geo.size.width / 1.5, height: geo.size.height / 1.3)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
+                    } else if self.widgetAgent.selectedWidget == .fari {
+                        Widget(type: .fari) {
+                            FariWidget()
+                        }
+                        .environmentObject(self.widgetAgent)
+                        .frame(width: geo.size.width / 1.5, height: geo.size.height / 1.3)
+                        .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
+                        .animation(.easeIn)
                     }
                     
                     

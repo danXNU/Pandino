@@ -13,12 +13,14 @@ enum WidgetType {
     case consumi
     case info
     case settings
+    case fari
     
     var widgetBarTitle: String {
         switch self {
         case .consumi: return "Consumi"
         case .info: return "Info"
         case .settings: return "Impostazioni"
+        case .fari: return "Fari"
         }
     }
 }
