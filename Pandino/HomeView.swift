@@ -88,6 +88,16 @@ struct HomeView: View {
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     }
+                    else if self.widgetAgent.selectedWidget == .weather {
+                        Widget(type: .weather) {
+                            WeatherWidget().environmentObject(self.weatherAgent)
+                        }
+                        .environmentObject(self.widgetAgent)
+                        .frame(minWidth: 300, minHeight: 300)
+                        .frame(width: geo.size.width / 2, height: geo.size.height / 2.1)
+                        .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
+                        .animation(.easeIn)
+                    }
                     
                     
                 }

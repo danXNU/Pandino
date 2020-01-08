@@ -26,12 +26,17 @@ class WeatherAgent: ObservableObject {
     private var timerScheduler: Timer?
     
     public var errString: String = ""
-    @Published var temperature: Double = 0
     @Published var timerDurationPublicValue: Int = Int(weatherUpdateTime) {
         didSet {
             self.changeTimerDuration(seconds: Double(timerDurationPublicValue))
         }
     }
+    
+    @Published var temperature: Double = 0
+    @Published var temperaturaPercepita: Double = 0
+    @Published var pressione: Int = 0
+    @Published var humidity: Int = 0
+    
     
     private func changeTimerDuration(seconds: Double) {
         weatherUpdateTime = seconds
@@ -49,6 +54,9 @@ class WeatherAgent: ObservableObject {
             case .success(let weather):
                 DispatchQueue.main.async {
                     self.temperature = weather.main.celsiusTemp
+                    self.temperaturaPercepita = weather.main.celsiusPercepita
+                    self.pressione = weather.main.pressure
+                    self.humidity = weather.main.humidity
                 }
             case .failure(let err):
                 self.errString = "\(err)"
@@ -101,15 +109,21 @@ struct Main: Decodable {
     let humidity: Int
     let pressure: Int
     let temp: Double
+    let temp_feels: Double
     let tempMax: Double
     let tempMin: Double
     private enum CodingKeys: String, CodingKey {
-        case humidity, pressure, temp, tempMax = "temp_max", tempMin = "temp_min"
+        case humidity, pressure, temp, tempMax = "temp_max", tempMin = "temp_min", temp_feels = "feels_like"
     }
     
     var celsiusTemp: Double {
         let kelvinTemp = Measurement.init(value: self.temp, unit: UnitTemperature.kelvin)
         return kelvinTemp.converted(to: .celsius).value
+    }
+    
+    var celsiusPercepita: Double {
+        let kelvin = Measurement.init(value: self.temp_feels, unit: UnitTemperature.kelvin)
+        return kelvin.converted(to: .celsius).value
     }
 }
 struct Sys: Decodable {
