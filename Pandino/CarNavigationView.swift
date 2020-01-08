@@ -42,9 +42,11 @@ struct CarNavigationView: View {
 //                                Text("\(Int(self.locationAgent.speed))")
                                 Text("\(Int(self.locationAgent.speed))")
                                     .font(Font.system(size: 60, weight: .bold, design: .default))
+                                    .foregroundColor(self.locationAgent.speed >= 100 ? Color.red : Color(UIColor.label))
                                 
                                 Text("Km/h")
                                     .font(Font.system(size: 30))
+                                    .foregroundColor(self.locationAgent.speed >= 100 ? Color.red : Color(UIColor.label))
                             }
                             
             //                Spacer()

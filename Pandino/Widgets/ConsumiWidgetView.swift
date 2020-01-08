@@ -16,40 +16,44 @@ struct ConsumiWidgetView: View {
     @State var kmDiViaggio: Float = 0.0
     
     var body: some View {
-        VStack {
-//            Spacer()
-            
+        ScrollView {
             VStack {
-                Text("Inserisci il tipo di guida")
-                    .font(.custom("Futura", size: 25))
-                
-                Picker(selection: self.$tipoSelezionato, label: Text("Tipo:").font(.custom("Futura", size: 20))) {
-                    ForEach(0..<tipi.count) {
-                        Text(self.tipi[$0]).tag($0)
-                            .font(.custom("Futura", size: 20))
+            //            Spacer()
                         
+                        VStack {
+                            Text("Inserisci il tipo di guida")
+                                .font(.custom("Futura", size: 25))
+                            
+                            Picker(selection: self.$tipoSelezionato, label: Text("Tipo:").font(.custom("Futura", size: 20))) {
+                                ForEach(0..<tipi.count) {
+                                    Text(self.tipi[$0]).tag($0)
+                                        .font(.custom("Futura", size: 20))
+                                    
+                                }
+                            }
+                            .pickerStyle(SegmentedPickerStyle())
+                        }
+                        .padding()
+                        
+                        Spacer()
+                        
+                        VStack {
+                            Text("Inserirsci il valore in Km di viaggio").font(.custom("Futura", size: 20))
+                            Text("\(Int(self.kmDiViaggio)) Km").font(.custom("Futura", size: 40))
+                                .offset(x: 0, y: 15)
+                            Slider(value: self.$kmDiViaggio, in: 0...500, step: 1)
+                        }
+                        .padding(.init(arrayLiteral: [.leading, .trailing]), 20)
+                        
+                        Spacer()
+                        Text(String(format: "%.1f litri", calcola()))
+                            .font(.custom("Futura", size: 60))
+                        
+                        Spacer()
                     }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-            }
-            .padding()
-            
-            Spacer()
-            
-            VStack {
-                Text("Inserirsci il valore in Km di viaggio").font(.custom("Futura", size: 20))
-                Text("\(Int(self.kmDiViaggio)) Km").font(.custom("Futura", size: 40))
-                    .offset(x: 0, y: 15)
-                Slider(value: self.$kmDiViaggio, in: 0...500, step: 1)
-            }
-            .padding(.init(arrayLiteral: [.leading, .trailing]), 20)
-            
-            Spacer()
-            Text(String(format: "%.1f litri", calcola()))
-                .font(.custom("Futura", size: 60))
-            
-            Spacer()
         }
+        
+        
         
     }
     

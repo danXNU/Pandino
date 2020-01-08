@@ -47,7 +47,7 @@ struct HomeView: View {
                         }
                         .environmentObject(self.widgetAgent)
                         .frame(minWidth: 300, minHeight: 300)
-                        .frame(maxWidth: geo.size.width * 0.7, maxHeight: geo.size.height * 0.7)
+                        .frame(maxWidth: geo.size.width * 0.7, maxHeight: geo.size.height * 0.6)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     } else if self.widgetAgent.selectedWidget == .info {
@@ -93,8 +93,8 @@ struct HomeView: View {
                             WeatherWidget().environmentObject(self.weatherAgent)
                         }
                         .environmentObject(self.widgetAgent)
-                        .frame(minWidth: 300, minHeight: 300)
-                        .frame(width: geo.size.width / 2, height: geo.size.height / 2.1)
+                        .frame(minWidth: 350, minHeight: 350)
+                        .frame(width: geo.size.width * 0.6, height: geo.size.height * 0.6)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     }

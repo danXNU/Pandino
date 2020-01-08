@@ -141,6 +141,6 @@ struct Weather: Decodable {
     let main: String
 }
 struct Wind: Decodable {
-    let deg: Int
+//    let deg: Int
     let speed: Double
 }
