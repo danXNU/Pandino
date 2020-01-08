@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CarNavigationView: View {
     @EnvironmentObject var widgetAgent: WidgetAgent
+    @EnvironmentObject var locationAgent: TeslaLocationManager
     @State var areFariAccesi: Bool = false
     
     var body: some View {
@@ -31,11 +32,14 @@ struct CarNavigationView: View {
                                 
                                 Text("Pandino")
                                 .font(Font.custom("Futura", size: 65))
+                                    
                             }
+                            .frame(maxWidth: geo.size.width, maxHeight: geo.size.height)
                             
                             Spacer()
                             
                             VStack {
+//                                Text("\(Int(self.locationAgent.speed))")
                                 Text("0")
                                     .font(Font.system(size: 60, weight: .bold, design: .default))
                                 
@@ -60,7 +64,7 @@ struct CarNavigationView: View {
                                         .font(Font.custom("Futura", size: 25))
                                         .foregroundColor(Color.primary)
                                 }
-                                .frame(width: 120)
+                                .frame(maxWidth: 120)
                                 .padding()
                                 .background(Color.gray.opacity(0.3))
                                 .clipShape(Capsule())
@@ -72,7 +76,7 @@ struct CarNavigationView: View {
                                         .font(Font.custom("Futura", size: 25))
                                         .foregroundColor(Color.primary)
                                 }
-                                .frame(width: 120)
+                                .frame(maxWidth: 120)
                                 .padding()
                                 .background(self.areFariAccesi ? .yellow : Color.gray.opacity(0.3))
                                 .clipShape(Capsule())
@@ -80,6 +84,7 @@ struct CarNavigationView: View {
                                 
                                 Spacer()
                             }
+                            .frame(maxWidth: geo.size.width, maxHeight: geo.size.height)
                             
                             
                             Spacer()

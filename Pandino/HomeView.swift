@@ -10,17 +10,31 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var widgetAgent: WidgetAgent
+    @EnvironmentObject var locationAgent: TeslaLocationManager
     
     var body: some View {
         GeometryReader { geo in
             ZStack {
                 HStack {
-                    CarNavigationView().environmentObject(self.widgetAgent)
+                    CarNavigationView().environmentObject(self.widgetAgent).environmentObject(self.locationAgent)
                         .frame(width: geo.size.width / 3)
                     
-                    //Map View
-                    MapView().environmentObject(self.locationAgent)
-                        .edgesIgnoringSafeArea(.all)
+                    GeometryReader { mapViewSize in
+                        ZStack {
+                            MapView()
+                            .edgesIgnoringSafeArea(.all)
+                            
+                            VStack {
+                                TopBar().environmentObject(self.locationAgent).environmentObject(self.widgetAgent)
+                                    .padding()
+                                    .frame(maxHeight: mapViewSize.size.height / 7)
+                                    .edgesIgnoringSafeArea(.top)
+                                Spacer()
+                            }
+                        }
+                    }
+                    
+                    
                 }
                 
                 
@@ -31,7 +45,8 @@ struct HomeView: View {
                             ConsumiWidgetView()
                         }
                         .environmentObject(self.widgetAgent)
-                        .frame(width: geo.size.width / 2, height: geo.size.height / 2)
+                        .frame(minWidth: 300, minHeight: 300)
+                        .frame(maxWidth: geo.size.width * 0.7, maxHeight: geo.size.height * 0.7)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     } else if self.widgetAgent.selectedWidget == .info {
@@ -39,15 +54,17 @@ struct HomeView: View {
                             InfoWidget()
                         }
                         .environmentObject(self.widgetAgent)
-                        .frame(width: geo.size.width / 2, height: geo.size.height / 2)
+                        .frame(minWidth: 300, minHeight: 300)
+                        .frame(maxWidth: geo.size.width * 0.8, maxHeight: geo.size.height * 0.8)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                         
                     } else if self.widgetAgent.selectedWidget == .settings {
                         Widget(type: .settings) {
-                            SettingsWidget().environmentObject(self.locationAgent)
+                            SettingsWidget()//.environmentObject(self.locationAgent)
                         }
                         .environmentObject(self.widgetAgent)
+                        .frame(minWidth: 300, minHeight: 300)
                         .frame(width: geo.size.width / 1.5, height: geo.size.height / 1.3)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
@@ -56,6 +73,16 @@ struct HomeView: View {
                             FariWidget()
                         }
                         .environmentObject(self.widgetAgent)
+                        .frame(minWidth: 300, minHeight: 300)
+                        .frame(width: geo.size.width / 2, height: geo.size.height / 2.1)
+                        .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
+                        .animation(.easeIn)
+                    } else if self.widgetAgent.selectedWidget == .coordinate {
+                        Widget(type: .fari) {
+                            CoordinateWidget().environmentObject(self.locationAgent)
+                        }
+                        .environmentObject(self.widgetAgent)
+                        .frame(minWidth: 300, minHeight: 300)
                         .frame(width: geo.size.width / 2, height: geo.size.height / 2.1)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
