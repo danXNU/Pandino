@@ -11,6 +11,7 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var widgetAgent: WidgetAgent
     @EnvironmentObject var locationAgent: TeslaLocationManager
+    @EnvironmentObject var weatherAgent: WeatherAgent
     
     var body: some View {
         GeometryReader { geo in
@@ -25,7 +26,7 @@ struct HomeView: View {
                             .edgesIgnoringSafeArea(.all)
                             
                             VStack {
-                                TopBar().environmentObject(self.locationAgent).environmentObject(self.widgetAgent)
+                                TopBar().environmentObject(self.locationAgent).environmentObject(self.widgetAgent).environmentObject(self.weatherAgent)
                                     .padding()
                                     .frame(maxHeight: mapViewSize.size.height / 7)
                                     .edgesIgnoringSafeArea(.top)
@@ -61,7 +62,7 @@ struct HomeView: View {
                         
                     } else if self.widgetAgent.selectedWidget == .settings {
                         Widget(type: .settings) {
-                            SettingsWidget()//.environmentObject(self.locationAgent)
+                            SettingsWidget().environmentObject(self.weatherAgent)
                         }
                         .environmentObject(self.widgetAgent)
                         .frame(minWidth: 300, minHeight: 300)
@@ -78,7 +79,7 @@ struct HomeView: View {
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     } else if self.widgetAgent.selectedWidget == .coordinate {
-                        Widget(type: .fari) {
+                        Widget(type: .coordinate) {
                             CoordinateWidget().environmentObject(self.locationAgent)
                         }
                         .environmentObject(self.widgetAgent)

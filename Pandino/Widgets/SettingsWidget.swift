@@ -9,10 +9,20 @@
 import SwiftUI
 
 struct SettingsWidget: View {
+    @EnvironmentObject var weatherAgent: WeatherAgent
+    
     var body: some View {
         Form {
-            Text("Hello, World!")
-            .frame(height: 60)
+            HStack {
+                Stepper(value: $weatherAgent.timerDurationPublicValue, in: 1 ... 60) {
+                    Text("Secondi di aggiornamento del meteo")
+                        .font(.custom("Futura", size: 25))
+                }
+                Text("\(self.weatherAgent.timerDurationPublicValue)")
+                .font(.custom("Futura", size: 20))
+            }
+            .frame(minHeight: 60)
+            
         }
     }
 }

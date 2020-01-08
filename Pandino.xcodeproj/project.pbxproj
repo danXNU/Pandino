@@ -11,6 +11,8 @@
 		DB66D23523C612410027BCDF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB66D23423C612410027BCDF /* LocationManager.swift */; };
 		DB66D23723C61D780027BCDF /* Bussola.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB66D23623C61D780027BCDF /* Bussola.swift */; };
 		DB66D23923C62EA30027BCDF /* CoordinateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB66D23823C62EA30027BCDF /* CoordinateWidget.swift */; };
+		DB68B88623C65745008A8E51 /* WeatherAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB68B88523C65745008A8E51 /* WeatherAgent.swift */; };
+		DB68B88823C67C04008A8E51 /* WeatherWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB68B88723C67C04008A8E51 /* WeatherWidget.swift */; };
 		DB6C437E23B8ED7A001A2E06 /* FariWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6C437D23B8ED7A001A2E06 /* FariWidget.swift */; };
 		DB8E9C8123B3DE23004726DD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8023B3DE23004726DD /* MapView.swift */; };
 		DB8E9C8523B3ECB1004726DD /* WidgetAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */; };
@@ -45,6 +47,8 @@
 		DB66D23423C612410027BCDF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Pandino/LocationManager.swift; sourceTree = SOURCE_ROOT; };
 		DB66D23623C61D780027BCDF /* Bussola.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bussola.swift; sourceTree = "<group>"; };
 		DB66D23823C62EA30027BCDF /* CoordinateWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateWidget.swift; sourceTree = "<group>"; };
+		DB68B88523C65745008A8E51 /* WeatherAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAgent.swift; sourceTree = "<group>"; };
+		DB68B88723C67C04008A8E51 /* WeatherWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWidget.swift; sourceTree = "<group>"; };
 		DB6C437D23B8ED7A001A2E06 /* FariWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FariWidget.swift; sourceTree = "<group>"; };
 		DB8E9C8023B3DE23004726DD /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetAgent.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				DB66D23423C612410027BCDF /* LocationManager.swift */,
+				DB68B88523C65745008A8E51 /* WeatherAgent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 				DBD24B7D23B4265900DBB6FD /* SettingsWidget.swift */,
 				DB6C437D23B8ED7A001A2E06 /* FariWidget.swift */,
 				DB66D23823C62EA30027BCDF /* CoordinateWidget.swift */,
+				DB68B88723C67C04008A8E51 /* WeatherWidget.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -305,9 +311,11 @@
 				DB6C437E23B8ED7A001A2E06 /* FariWidget.swift in Sources */,
 				DBFB2F2823AC340D001027D3 /* AppDelegate.swift in Sources */,
 				DB96135823B188A6008BEC34 /* HomeView.swift in Sources */,
+				DB68B88623C65745008A8E51 /* WeatherAgent.swift in Sources */,
 				DBFB2F2A23AC340D001027D3 /* SceneDelegate.swift in Sources */,
 				DB66D23523C612410027BCDF /* LocationManager.swift in Sources */,
 				DB8E9C8523B3ECB1004726DD /* WidgetAgent.swift in Sources */,
+				DB68B88823C67C04008A8E51 /* WeatherWidget.swift in Sources */,
 				DB66D23923C62EA30027BCDF /* CoordinateWidget.swift in Sources */,
 				DBFB2F2C23AC340D001027D3 /* ConsumiWidgetView.swift in Sources */,
 				DBDA411423B28A3B00EE40CD /* Widget.swift in Sources */,

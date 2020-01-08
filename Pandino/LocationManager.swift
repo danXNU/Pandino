@@ -37,10 +37,10 @@ class TeslaLocationManager: NSObject, CLLocationManagerDelegate, ObservableObjec
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else { return }
+        guard let location = locations.last else { return }
         self.latitudine = location.coordinate.latitude
         self.longitudine = location.coordinate.longitude
-        self.speed = location.speed// * 3.6
+        self.speed = location.speed * 3.6
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {

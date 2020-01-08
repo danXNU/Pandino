@@ -40,7 +40,7 @@ struct CarNavigationView: View {
                             
                             VStack {
 //                                Text("\(Int(self.locationAgent.speed))")
-                                Text("0")
+                                Text("\(Int(self.locationAgent.speed))")
                                     .font(Font.system(size: 60, weight: .bold, design: .default))
                                 
                                 Text("Km/h")

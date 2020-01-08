@@ -11,6 +11,7 @@ import SwiftUI
 struct TopBar: View {
     @EnvironmentObject var locationAgent: TeslaLocationManager
     @EnvironmentObject var widgetAgent: WidgetAgent
+    @EnvironmentObject var weatherAgent: WeatherAgent
     
     var body: some View {
         GeometryReader { geo in
@@ -30,6 +31,13 @@ struct TopBar: View {
                     }
                     
                     Divider()
+                    
+                    Text("\(Int(self.weatherAgent.temperature))º C")
+                        .font(.custom("Futura", size: geo.size.height / 2.5))
+                        .onTapGesture {
+                            
+                        }
+                    Divider()
                     Spacer()
                     
                     Text("Esempio")
@@ -39,6 +47,8 @@ struct TopBar: View {
                 
                     
             }
+        }.onAppear {
+            self.weatherAgent.startScheduling()
         }
         
     }
