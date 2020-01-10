@@ -22,13 +22,35 @@ struct HomeView: View {
                     
                     GeometryReader { mapViewSize in
                         ZStack {
-                            MapView()
+                            ShitMap()
                             .edgesIgnoringSafeArea(.all)
                             
                             VStack {
+                                HStack {
+                                    Spacer()
+                                    Bussola()
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 15)
+                                            .fill(Color(UIColor.systemBackground))
+                                    )
+                                    .environmentObject(self.locationAgent)
+                                    .frame(maxWidth: 70, maxHeight: 70)
+                                    .offset(x: -10, y: 10)
+                                    .onTapGesture {
+                                        self.widgetAgent.toggle(with: .coordinate)
+                                    }
+                                    
+                                 
+                                }
+                                Spacer()
+                                Spacer()
+                            }
+                            
+                            
+                            VStack {
                                 TopBar().environmentObject(self.locationAgent).environmentObject(self.widgetAgent).environmentObject(self.weatherAgent)
-                                    .padding()
-                                    .frame(maxHeight: mapViewSize.size.height / 7)
+//                                    .padding()
+                                    .frame(maxHeight: 45)//mapViewSize.size.height / 10)
                                     .edgesIgnoringSafeArea(.top)
                                 Spacer()
                             }

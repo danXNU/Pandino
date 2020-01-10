@@ -41,10 +41,10 @@ struct Bussola: View {
 //                    .padding(.bottom, 5)
                 }
 //                .padding(.all, 5)
-                .background(
-                    Circle()
-                        .stroke(Color(UIColor.label), lineWidth: 1)
-                )
+//                .background(
+////                    Circle()
+////                        .stroke(Color(UIColor.label), lineWidth: 1)
+//                )
                 
                 Image(systemName: "arrow.up.circle.fill")
                     .resizable()

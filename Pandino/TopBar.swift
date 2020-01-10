@@ -17,20 +17,23 @@ struct TopBar: View {
         GeometryReader { geo in
             ZStack {
                 
-                RoundedRectangle(cornerRadius: 15)
-                    .fill(Color(UIColor.systemBackground))
+                Rectangle()
+                    .fill(
+                        LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .top, endPoint: .bottom)
+//                        Color(UIColor.systemBackground)
+                )
                 
                    
                 HStack {
-                    Bussola()
-                    .environmentObject(self.locationAgent)
-                    .frame(maxWidth: geo.size.width / 8, maxHeight: geo.size.width / 8)
-                    .padding(.vertical)
-                    .onTapGesture {
-                        self.widgetAgent.toggle(with: .coordinate)
-                    }
-                    
-                    Divider()
+//                    Bussola()
+//                    .environmentObject(self.locationAgent)
+//                    .frame(maxWidth: geo.size.width / 8, maxHeight: geo.size.width / 8)
+//                    .padding(.vertical)
+//                    .onTapGesture {
+//                        self.widgetAgent.toggle(with: .coordinate)
+//                    }
+//                    
+//                    Divider()
                     
                     Text("\(Int(self.weatherAgent.temperature))º C")
                         .font(.custom("Futura", size: geo.size.height / 2.5))
