@@ -17,7 +17,11 @@ class TeslaLocationManager: NSObject, CLLocationManagerDelegate, ObservableObjec
     @Published var latitudine: Double = 0
     @Published var speed: Double = 0
     
-    private var lm: CLLocationManager
+    @Published var animateToUserLocation: Bool = false
+    
+    public var lm: CLLocationManager
+    
+    private var isAlreadyAnimated: Bool = false
     
     override init() {
         self.lm = CLLocationManager()
@@ -34,6 +38,10 @@ class TeslaLocationManager: NSObject, CLLocationManagerDelegate, ObservableObjec
             self.lm.startUpdatingLocation()
         }
         
+    }
+        
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("TeslaLocationManager ERROR: \(error)")
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
