@@ -55,6 +55,7 @@
 		DB8E9C8723B3F1A6004726DD /* InfoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWidget.swift; sourceTree = "<group>"; };
 		DB96135723B188A6008BEC34 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DB96135923B195B1008BEC34 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		DBB9A36923CA62D9000C85C8 /* Pandino.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pandino.entitlements; sourceTree = "<group>"; };
 		DBD24B7D23B4265900DBB6FD /* SettingsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWidget.swift; sourceTree = "<group>"; };
 		DBDA411323B28A3B00EE40CD /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
 		DBDA411523B2E3A400EE40CD /* CarNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarNavigationView.swift; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 		DBFB2F2623AC340D001027D3 /* Pandino */ = {
 			isa = PBXGroup;
 			children = (
+				DBB9A36923CA62D9000C85C8 /* Pandino.entitlements */,
 				DB6C438223B902AC001A2E06 /* Models */,
 				DB8E9C8623B3F172004726DD /* Widgets */,
 				DB8E9C7F23B3DE0F004726DD /* Custom Views */,
@@ -470,7 +472,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pandino/Pandino.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Pandino/Preview Content\"";
 				DEVELOPMENT_TEAM = R779A64KR9;
 				ENABLE_PREVIEWS = YES;
@@ -481,6 +485,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.danitox.Pandino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -490,7 +495,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pandino/Pandino.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Pandino/Preview Content\"";
 				DEVELOPMENT_TEAM = R779A64KR9;
 				ENABLE_PREVIEWS = YES;
@@ -501,6 +508,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.danitox.Pandino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

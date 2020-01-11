@@ -35,7 +35,7 @@ struct HomeView: View {
                                     )
                                     .environmentObject(self.locationAgent)
                                     .frame(maxWidth: 70, maxHeight: 70)
-                                    .offset(x: -10, y: 10)
+                                    .offset(x: -30, y: 30)
                                     .onTapGesture {
                                         self.widgetAgent.toggle(with: .coordinate)
                                     }
@@ -48,10 +48,14 @@ struct HomeView: View {
                             
                             
                             VStack {
+                                #if !targetEnvironment(macCatalyst)
                                 TopBar().environmentObject(self.locationAgent).environmentObject(self.widgetAgent).environmentObject(self.weatherAgent)
-//                                    .padding()
-                                    .frame(maxHeight: 45)//mapViewSize.size.height / 10)
+                                    .frame(maxHeight: 45)
                                     .edgesIgnoringSafeArea(.top)
+                                #else
+                                TopBar().environmentObject(self.locationAgent).environmentObject(self.widgetAgent).environmentObject(self.weatherAgent)
+                                    .frame(maxHeight: 45)
+                                #endif
                                 Spacer()
                             }
                         }
