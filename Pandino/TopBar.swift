@@ -19,21 +19,12 @@ struct TopBar: View {
                 
                 Rectangle()
                     .fill(
-                        LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .top, endPoint: .bottom)
+                        LinearGradient(gradient: Gradient(colors: [Color("top-bar-color"), .clear]), startPoint: .top, endPoint: .bottom)
 //                        Color(UIColor.systemBackground)
                 )
                 
                    
                 HStack {
-//                    Bussola()
-//                    .environmentObject(self.locationAgent)
-//                    .frame(maxWidth: geo.size.width / 8, maxHeight: geo.size.width / 8)
-//                    .padding(.vertical)
-//                    .onTapGesture {
-//                        self.widgetAgent.toggle(with: .coordinate)
-//                    }
-//                    
-//                    Divider()
                     
                     Text("\(Int(self.weatherAgent.temperature))º C")
                         .font(.custom("Futura", size: geo.size.height / 2.5))
@@ -43,7 +34,14 @@ struct TopBar: View {
                     Divider()
                     Spacer()
                     
-                    Text("Esempio")
+//                    Text("Esempio")
+                    Image("tesla-logo")
+                    .resizable()
+                    .aspectRatio(1.0, contentMode: .fit)
+                    .accentColor(Color.white)
+                    .frame(maxHeight: geo.size.height * 0.8)
+                    .offset(x: 0, y: 5)
+                    
                     Spacer()
                 }
                 .padding(.leading, 10)
