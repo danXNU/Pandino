@@ -10,15 +10,13 @@ import SwiftUI
 import MapKit
 
 struct ShitMap: View {
+    @EnvironmentObject var mapAgent: MapAgent
     @EnvironmentObject var teslaLocationManager: TeslaLocationManager
-    
-    @State var selectedMapType: Int = 0
-    @State var tipi: [String] = ["Mappa", "Satellite", "Ibrido"]
-    
+        
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                MapView(teslaLocationManager: self.teslaLocationManager)
+                MapView(mapAgent: self.mapAgent, teslaLocationManager: self.teslaLocationManager)
                 
                 VStack {
                     Spacer()
@@ -33,9 +31,9 @@ struct ShitMap: View {
                             .frame(width: 30, height: 30)
                         }
                         
-                        Picker(selection: self.$selectedMapType, label: Text("Tipo:")) {
-                            ForEach(0..<self.tipi.count) {
-                                Text(self.tipi[$0]).tag($0)
+                        Picker(selection: self.$mapAgent.mapTypeInteger, label: Text("Tipo:")) {
+                            ForEach(0..<self.mapAgent.tipiStrings.count) {
+                                Text(self.mapAgent.tipiStrings[$0]).tag($0)
                                     .font(.custom("Futura", size: 20))
                                 
                             }
@@ -56,6 +54,7 @@ struct MapView: UIViewRepresentable {
     typealias UIViewType = MKMapView
 
     //let mapType: MKMapType
+    var mapAgent: MapAgent
     var teslaLocationManager: TeslaLocationManager
     //var showUserLocation: Bool
     
@@ -80,6 +79,8 @@ struct MapView: UIViewRepresentable {
             }
             teslaLocationManager.animateToUserLocation = false
         }
+        
+        uiView.mapType = self.mapAgent.mapType
     }
     
 }

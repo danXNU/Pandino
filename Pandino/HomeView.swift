@@ -12,6 +12,7 @@ struct HomeView: View {
     @EnvironmentObject var widgetAgent: WidgetAgent
     @EnvironmentObject var locationAgent: TeslaLocationManager
     @EnvironmentObject var weatherAgent: WeatherAgent
+    @EnvironmentObject var mapAgent: MapAgent
     
     var body: some View {
         GeometryReader { geo in
