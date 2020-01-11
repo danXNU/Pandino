@@ -91,42 +91,6 @@ struct CarNavigationView: View {
                             
                             Spacer()
                             
-                            HStack {
-                                Image(systemName: "gear")
-                                .resizable()
-                                .foregroundColor(Color.gray.opacity(1.0))
-                                .frame(width: 50, height: 50)
-                                .offset(x: 20, y: 0)
-                                .onTapGesture {
-                                    self.widgetAgent.toggle(with: .settings)
-                                }
-                                
-                                
-                                Spacer()
-                                
-                                Image(systemName: "tv.music.note")
-                                .resizable()
-                                .foregroundColor(Color.gray.opacity(1.0))
-                                .frame(width: 50, height: 50)
-                                .offset(x: 0, y: 0)
-                                .onTapGesture {
-                                    self.widgetAgent.toggle(with: .info)
-                                }
-                                
-                                Spacer()
-                                
-                                Image(systemName: "info.circle")
-                                .resizable()
-                                .foregroundColor(Color.gray)
-                                .frame(width: 50, height: 50)
-                                .offset(x: -20, y: 0)
-                                .onTapGesture {
-                                    self.widgetAgent.toggle(with: .info)
-                                }
-                            }
-                            .offset(x: 0, y: -10)
-                            
-                            
                         }
                     }
         }

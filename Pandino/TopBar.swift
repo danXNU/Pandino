@@ -41,6 +41,9 @@ struct TopBar: View {
                     .accentColor(Color.white)
                     .frame(maxHeight: geo.size.height * 0.8)
                     .offset(x: 0, y: 5)
+                    .onTapGesture {
+                        self.widgetAgent.toggle(with: .info)
+                    }
                     
                     Spacer()
                 }

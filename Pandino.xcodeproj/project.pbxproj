@@ -20,6 +20,7 @@
 		DB96135823B188A6008BEC34 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96135723B188A6008BEC34 /* HomeView.swift */; };
 		DB96135A23B195B1008BEC34 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96135923B195B1008BEC34 /* CloseButton.swift */; };
 		DBB9A36B23CA78A0000C85C8 /* MapAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB9A36A23CA78A0000C85C8 /* MapAgent.swift */; };
+		DBB9A36D23CA7D51000C85C8 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB9A36C23CA7D51000C85C8 /* BottomBar.swift */; };
 		DBD24B7E23B4265900DBB6FD /* SettingsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD24B7D23B4265900DBB6FD /* SettingsWidget.swift */; };
 		DBDA411423B28A3B00EE40CD /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA411323B28A3B00EE40CD /* Widget.swift */; };
 		DBDA411623B2E3A400EE40CD /* CarNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA411523B2E3A400EE40CD /* CarNavigationView.swift */; };
@@ -45,7 +46,7 @@
 
 /* Begin PBXFileReference section */
 		DB66D23223C60E2B0027BCDF /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
-		DB66D23423C612410027BCDF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Pandino/LocationManager.swift; sourceTree = SOURCE_ROOT; };
+		DB66D23423C612410027BCDF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		DB66D23623C61D780027BCDF /* Bussola.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bussola.swift; sourceTree = "<group>"; };
 		DB66D23823C62EA30027BCDF /* CoordinateWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateWidget.swift; sourceTree = "<group>"; };
 		DB68B88523C65745008A8E51 /* WeatherAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAgent.swift; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 		DB96135923B195B1008BEC34 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		DBB9A36923CA62D9000C85C8 /* Pandino.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pandino.entitlements; sourceTree = "<group>"; };
 		DBB9A36A23CA78A0000C85C8 /* MapAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAgent.swift; sourceTree = "<group>"; };
+		DBB9A36C23CA7D51000C85C8 /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		DBD24B7D23B4265900DBB6FD /* SettingsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWidget.swift; sourceTree = "<group>"; };
 		DBDA411323B28A3B00EE40CD /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
 		DBDA411523B2E3A400EE40CD /* CarNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarNavigationView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				DB66D23423C612410027BCDF /* LocationManager.swift */,
 				DB68B88523C65745008A8E51 /* WeatherAgent.swift */,
 				DBB9A36A23CA78A0000C85C8 /* MapAgent.swift */,
+				DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,9 +166,9 @@
 				DB96135723B188A6008BEC34 /* HomeView.swift */,
 				DBDA411523B2E3A400EE40CD /* CarNavigationView.swift */,
 				DB66D23223C60E2B0027BCDF /* TopBar.swift */,
+				DBB9A36C23CA7D51000C85C8 /* BottomBar.swift */,
 				DBFB2F4923AC3423001027D3 /* SupportingFiles */,
 				DBFB2F2F23AC340E001027D3 /* Preview Content */,
-				DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */,
 			);
 			path = Pandino;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				DB8E9C8523B3ECB1004726DD /* WidgetAgent.swift in Sources */,
 				DB68B88823C67C04008A8E51 /* WeatherWidget.swift in Sources */,
 				DBB9A36B23CA78A0000C85C8 /* MapAgent.swift in Sources */,
+				DBB9A36D23CA7D51000C85C8 /* BottomBar.swift in Sources */,
 				DB66D23923C62EA30027BCDF /* CoordinateWidget.swift in Sources */,
 				DBFB2F2C23AC340D001027D3 /* ConsumiWidgetView.swift in Sources */,
 				DBDA411423B28A3B00EE40CD /* Widget.swift in Sources */,

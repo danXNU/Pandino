@@ -40,9 +40,15 @@ struct ShitMap: View {
                         }
                         .pickerStyle(SegmentedPickerStyle())
                         .frame(maxWidth: geo.size.width / 2.1)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color(UIColor.systemBackground))
+                        )
                         
                     
-                    }.offset(x: 0, y: -30)
+                    }
+                    .offset(x: 0, y: -30)
+                    
                 }
             }
         }

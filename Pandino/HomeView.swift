@@ -17,53 +17,58 @@ struct HomeView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                HStack {
-                    CarNavigationView().environmentObject(self.widgetAgent).environmentObject(self.locationAgent)
-                        .frame(width: geo.size.width / 3)
-                    
-                    GeometryReader { mapViewSize in
-                        ZStack {
-                            ShitMap()
-                            .edgesIgnoringSafeArea(.all)
-                            
-                            VStack {
-                                HStack {
-                                    Spacer()
-                                    Bussola()
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 15)
-                                            .fill(Color(UIColor.systemBackground))
-                                    )
-                                    .environmentObject(self.locationAgent)
-                                    .frame(maxWidth: 70, maxHeight: 70)
-                                    .offset(x: -30, y: 30)
-                                    .onTapGesture {
-                                        self.widgetAgent.toggle(with: .coordinate)
+                VStack {
+                    HStack {
+                        CarNavigationView().environmentObject(self.widgetAgent).environmentObject(self.locationAgent)
+                            .frame(width: geo.size.width / 3)
+                        
+                        GeometryReader { mapViewSize in
+                            ZStack {
+                                ShitMap()
+                                .edgesIgnoringSafeArea(.all)
+                                
+                                VStack {
+                                    HStack {
+                                        Spacer()
+                                        Bussola()
+                                        .background(
+                                            RoundedRectangle(cornerRadius: 15)
+                                                .fill(Color(UIColor.systemBackground))
+                                        )
+                                        .environmentObject(self.locationAgent)
+                                        .frame(maxWidth: 70, maxHeight: 70)
+                                        .offset(x: -30, y: 30)
+                                        .onTapGesture {
+                                            self.widgetAgent.toggle(with: .coordinate)
+                                        }
+                                        
+                                     
                                     }
-                                    
-                                 
+                                    Spacer()
+                                    Spacer()
                                 }
-                                Spacer()
-                                Spacer()
-                            }
-                            
-                            
-                            VStack {
-                                #if !targetEnvironment(macCatalyst)
-                                TopBar().environmentObject(self.locationAgent).environmentObject(self.widgetAgent).environmentObject(self.weatherAgent)
-                                    .frame(maxHeight: 45)
-                                    .edgesIgnoringSafeArea(.top)
-                                #else
-                                TopBar().environmentObject(self.locationAgent).environmentObject(self.widgetAgent).environmentObject(self.weatherAgent)
-                                    .frame(maxHeight: 45)
-                                #endif
-                                Spacer()
+                                
+                                
+                                VStack {
+                                    #if !targetEnvironment(macCatalyst)
+                                    TopBar().environmentObject(self.locationAgent).environmentObject(self.widgetAgent).environmentObject(self.weatherAgent)
+                                        .frame(maxHeight: 45)
+                                        .edgesIgnoringSafeArea(.top)
+                                    #else
+                                    TopBar().environmentObject(self.locationAgent).environmentObject(self.widgetAgent).environmentObject(self.weatherAgent)
+                                        .frame(maxHeight: 45)
+                                    #endif
+                                    Spacer()
+                                }
                             }
                         }
+                        
+                        
                     }
-                    
-                    
+                    BottomBar()
+                        .frame(maxHeight: 100)
                 }
+                
                 
                 
                 if self.widgetAgent.isShowingWidget {

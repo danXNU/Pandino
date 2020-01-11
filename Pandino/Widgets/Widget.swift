@@ -22,7 +22,7 @@ struct Widget<Content>: View where Content: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(Color(UIColor.systemBackground))
-                    .shadow(color: Color(UIColor.label), radius: 20)
+                    .shadow(color: Color.black, radius: 20)
                 
                 VStack {
                     WidgetBar(cornerRadius: 20, title: self.type.widgetBarTitle, closeAction: self.closeAction == nil ? { self.widgetAgent.toggle(with: self.type)} : self.closeAction)
