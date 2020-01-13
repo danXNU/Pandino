@@ -28,9 +28,14 @@ struct TopBar: View {
                     
                     Text("\(Int(self.weatherAgent.temperature))º C")
                         .font(.custom("Futura", size: geo.size.height / 2.5))
-                        .onTapGesture {
-                            self.widgetAgent.toggle(with: .weather)
-                        }
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                        .padding()
+                    )
+                    .onTapGesture {
+                        self.widgetAgent.toggle(with: .weather)
+                    }
+                    
                     Divider()
                     Spacer()
                     
