@@ -16,6 +16,7 @@ enum WidgetType {
     case fari
     case coordinate
     case weather
+    case music
     
     var widgetBarTitle: String {
         switch self {
@@ -25,6 +26,7 @@ enum WidgetType {
         case .fari: return "Fari"
         case .coordinate: return "Coordinate"
         case .weather: return "Tempo"
+        case .music: return "Musica"
         }
     }
 }

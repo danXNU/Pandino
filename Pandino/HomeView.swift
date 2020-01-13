@@ -130,6 +130,16 @@ struct HomeView: View {
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     }
+                    else if self.widgetAgent.selectedWidget == .music {
+                        Widget(type: .music) {
+                            MusicWidget()
+                        }
+                        .environmentObject(self.widgetAgent)
+                        .frame(minWidth: 350, minHeight: 350)
+                        .frame(width: geo.size.width * 0.6, height: geo.size.height * 0.6)
+                        .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
+                        .animation(.easeIn)
+                    }
                     
                     
                 }

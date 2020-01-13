@@ -36,7 +36,7 @@ struct BottomBar: View {
                             .foregroundColor(Color.gray.opacity(1.0))
                                 .frame(height: geo.size.height / 2)
                             .onTapGesture {
-                                self.widgetAgent.toggle(with: .info)
+                                self.widgetAgent.toggle(with: .music)
                             }
                             
                             
