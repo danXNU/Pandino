@@ -30,6 +30,7 @@ class TeslaLocationManager: NSObject, CLLocationManagerDelegate, ObservableObjec
         self.lm.delegate = self
     
         self.lm.requestWhenInUseAuthorization()
+        self.lm.headingOrientation = .landscapeLeft
         
         self.lm.startUpdatingHeading()
         
@@ -48,7 +49,7 @@ class TeslaLocationManager: NSObject, CLLocationManagerDelegate, ObservableObjec
         guard let location = locations.last else { return }
         self.latitudine = location.coordinate.latitude
         self.longitudine = location.coordinate.longitude
-        self.speed = location.speed * 3.6
+        self.speed = location.speed <= 0 ? 0.0 : location.speed * 3.6
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
