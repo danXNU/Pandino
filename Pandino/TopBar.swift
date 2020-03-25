@@ -23,15 +23,21 @@ struct TopBar: View {
 //                        Color(UIColor.systemBackground)
                 )
                 
-                   
                 HStack {
                     
                     Text("\(Int(self.weatherAgent.temperature))º C")
                         .font(.custom("Futura", size: geo.size.height / 2.5))
-                        .onTapGesture {
-                            self.widgetAgent.toggle(with: .weather)
-                        }
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .padding()	
+                    )
+                    .onTapGesture {
+                        self.widgetAgent.toggle(with: .weather)
+                    }
+                    
                     Divider()
+                    Text("0º C")
+                        .font(.custom("Futura", size: geo.size.height / 2.5))
                     Spacer()
                     
 //                    Text("Esempio")
