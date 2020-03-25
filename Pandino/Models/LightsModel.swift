@@ -99,7 +99,7 @@ class LightsManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     @Published var isConnected: Bool = false
     @Published var isEstablishingConnection: Bool = false
     
-    @Published var brightnessLevel : Int = 0
+    @Published var brightnessLevel : Int = 2
 
     
     override init() {
@@ -148,7 +148,7 @@ class LightsManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     }
     
     public func chnageBrightness(newValue: Int) {
-        guard newValue <= 3, newValue > 0 else { return }
+        guard newValue <= 3, newValue >= 1 else { return }
         
         if newValue == 1 {
             self.write(msgData: self.lowLumos)
@@ -157,6 +157,8 @@ class LightsManager: NSObject, ObservableObject, CBCentralManagerDelegate {
         } else if newValue == 3 {
             self.write(msgData: self.highLumos)
         }
+        
+        self.brightnessLevel = newValue
         
     }
     
