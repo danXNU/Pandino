@@ -12,6 +12,7 @@ struct TopBar: View {
     @EnvironmentObject var locationAgent: TeslaLocationManager
     @EnvironmentObject var widgetAgent: WidgetAgent
     @EnvironmentObject var weatherAgent: WeatherAgent
+    @EnvironmentObject var ledManager: LightsManager
     
     var body: some View {
         GeometryReader { geo in
@@ -38,6 +39,16 @@ struct TopBar: View {
                     Divider()
                     Text("0º C")
                         .font(.custom("Futura", size: geo.size.height / 2.5))
+                    Divider()
+                    
+                    Image(systemName: self.ledManager.isConnected ? "wifi" : "wifi.slash")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxHeight: geo.size.height / 2.3)
+                        .onTapGesture {
+                            self.ledManager.toggleConnection()
+                        }
+                    
                     Spacer()
                     
 //                    Text("Esempio")
