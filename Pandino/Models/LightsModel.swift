@@ -159,6 +159,11 @@ class LightsManager: NSObject, ObservableObject, CBCentralManagerDelegate {
         }
         
         self.brightnessLevel = newValue
+        if (1...3).contains(newValue) {
+            self.isPoweredOn = true
+        } else {
+            self.isPoweredOn = false
+        }
         
     }
     
