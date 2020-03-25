@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @ObservedObject var locationHelper = TeslaLocationManager()
     @ObservedObject var weatherAgent = WeatherAgent()
     @ObservedObject var mapAgent = MapAgent()
+    @ObservedObject var lightsManager = LightsManager()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -26,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         weatherAgent.locationManager = locationHelper
         
         // Create the SwiftUI view that provides the window contents.
-        let contentView = HomeView().environmentObject(widgetHelper).environmentObject(locationHelper).environmentObject(weatherAgent).environmentObject(mapAgent)
+        let contentView = HomeView().environmentObject(widgetHelper).environmentObject(locationHelper).environmentObject(weatherAgent).environmentObject(mapAgent).environmentObject(lightsManager)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

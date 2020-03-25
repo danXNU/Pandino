@@ -9,7 +9,7 @@
 import Foundation
 import CoreBluetooth
 
-class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate {
+class LightsManager: NSObject, ObservableObject, CBCentralManagerDelegate {
 
     public let powerOnDataMessage : Data =  Data.getMessage(withBytes: [0x33, 0x01, 0x01, 0x00,
                                                          0x00, 0x00, 0x00, 0x00,
@@ -169,7 +169,7 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     }
 }
 
-extension BluetoothManager {
+extension LightsManager {
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         switch central.state {
         case .unknown:
@@ -218,7 +218,7 @@ extension BluetoothManager {
     }
 }
 
-extension BluetoothManager: CBPeripheralDelegate {
+extension LightsManager: CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         if let error = error {
             print("ERROR: \(error)")
@@ -257,8 +257,8 @@ extension BluetoothManager: CBPeripheralDelegate {
             }
         }
     }
-//
-//    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
 //        switch characteristic.uuid {
 //        case writeC:
 //            if let data = characteristic.value {
@@ -280,6 +280,6 @@ extension BluetoothManager: CBPeripheralDelegate {
 //        default:
 //            print("Unhandled Characteristic UUID: \(characteristic.uuid)")
 //        }
-//    }
+    }
 
 }

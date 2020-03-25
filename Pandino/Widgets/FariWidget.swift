@@ -14,30 +14,33 @@ import SwiftUI
 
 struct FariWidget: View {
     @EnvironmentObject var wifgetAgent: WidgetAgent
-    
-//    @State var fendinebbiaOn: Bool = false
-    @State var abitacoloOn: Bool = false
-    @State var fondoOn: Bool = false
+    @EnvironmentObject var ledAgent : LightsManager
     
     var body: some View {
-        Form {            
-            HStack {
-               Toggle(isOn: self.$abitacoloOn) {
-                   Text("Abitacolo")
-                .font(.custom("Futura", size: 25)).bold()
-                .foregroundColor(Color(UIColor.label))
-               }
+        ZStack {
+            Button(action: { self.ledAgent.toggleConnection() }) {
+                Text("Connetti")
+                    .font(Font.custom("Futura", size: 25))
+                    .foregroundColor(Color.primary)
             }
-            .frame(height: 60)
+            .frame(maxWidth: 120)
+            .padding()
+            .background(Color.gray.opacity(0.3))
+            .clipShape(Capsule())
             
-            HStack {
-                Toggle(isOn: self.$fondoOn) {
-                    Text("Fondo")
-                    .font(.custom("Futura", size: 25)).bold()
-                    .foregroundColor(Color(UIColor.label))
+            VStack(alignment: .trailing) {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Circle()
+                        .frame(width: 10, height: 10)
+                        .foregroundColor(self.ledAgent.isConnected ? .green : .red)
+                    Text(self.ledAgent.isConnected ? "Connesso" : "Disconnesso")
                 }
+                .padding(.trailing, 5)
             }
-            .frame(height: 60)
+            .padding(.bottom, 5)
         }
+        
     }
 }
