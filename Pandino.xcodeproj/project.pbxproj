@@ -14,6 +14,8 @@
 		DB68B88623C65745008A8E51 /* WeatherAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB68B88523C65745008A8E51 /* WeatherAgent.swift */; };
 		DB68B88823C67C04008A8E51 /* WeatherWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB68B88723C67C04008A8E51 /* WeatherWidget.swift */; };
 		DB6C437E23B8ED7A001A2E06 /* FariWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6C437D23B8ED7A001A2E06 /* FariWidget.swift */; };
+		DB81EA99242BB7270033D57E /* LightsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB81EA98242BB7270033D57E /* LightsModel.swift */; };
+		DB81EA9B242BBC320033D57E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB81EA9A242BBC320033D57E /* Extensions.swift */; };
 		DB8E9C8123B3DE23004726DD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8023B3DE23004726DD /* MapView.swift */; };
 		DB8E9C8523B3ECB1004726DD /* WidgetAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */; };
 		DB8E9C8823B3F1A6004726DD /* InfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8723B3F1A6004726DD /* InfoWidget.swift */; };
@@ -52,6 +54,8 @@
 		DB68B88523C65745008A8E51 /* WeatherAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAgent.swift; sourceTree = "<group>"; };
 		DB68B88723C67C04008A8E51 /* WeatherWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWidget.swift; sourceTree = "<group>"; };
 		DB6C437D23B8ED7A001A2E06 /* FariWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FariWidget.swift; sourceTree = "<group>"; };
+		DB81EA98242BB7270033D57E /* LightsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsModel.swift; sourceTree = "<group>"; };
+		DB81EA9A242BBC320033D57E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DB8E9C8023B3DE23004726DD /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetAgent.swift; sourceTree = "<group>"; };
 		DB8E9C8723B3F1A6004726DD /* InfoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWidget.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				DB68B88523C65745008A8E51 /* WeatherAgent.swift */,
 				DBB9A36A23CA78A0000C85C8 /* MapAgent.swift */,
 				DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */,
+				DB81EA98242BB7270033D57E /* LightsModel.swift */,
+				DB81EA9A242BBC320033D57E /* Extensions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 				DBDA411623B2E3A400EE40CD /* CarNavigationView.swift in Sources */,
 				DB6C437E23B8ED7A001A2E06 /* FariWidget.swift in Sources */,
 				DBFB2F2823AC340D001027D3 /* AppDelegate.swift in Sources */,
+				DB81EA9B242BBC320033D57E /* Extensions.swift in Sources */,
 				DB96135823B188A6008BEC34 /* HomeView.swift in Sources */,
 				DB68B88623C65745008A8E51 /* WeatherAgent.swift in Sources */,
 				DBFB2F2A23AC340D001027D3 /* SceneDelegate.swift in Sources */,
@@ -325,6 +332,7 @@
 				DB8E9C8523B3ECB1004726DD /* WidgetAgent.swift in Sources */,
 				DB68B88823C67C04008A8E51 /* WeatherWidget.swift in Sources */,
 				DBB9A36B23CA78A0000C85C8 /* MapAgent.swift in Sources */,
+				DB81EA99242BB7270033D57E /* LightsModel.swift in Sources */,
 				DBB9A36D23CA7D51000C85C8 /* BottomBar.swift in Sources */,
 				DB66D23923C62EA30027BCDF /* CoordinateWidget.swift in Sources */,
 				DBFB2F2C23AC340D001027D3 /* ConsumiWidgetView.swift in Sources */,
