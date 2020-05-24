@@ -29,7 +29,7 @@ struct SettingsWidget: View {
             }
             
             Section(header: Text("Contachilometri")) {
-                Toggle(isOn: $isUsingDeviceGPS, label: { Text("Usa il GPS dell'iPad").font(.custom("Futura", size: 25)) })
+                Toggle(isOn: $isUsingDeviceGPS, label: { Text("Usa il GPS di un dispositivo esterno").font(.custom("Futura", size: 25)) })
                 .frame(minHeight: 60)
                 if isUsingDeviceGPS {
                     HStack {
