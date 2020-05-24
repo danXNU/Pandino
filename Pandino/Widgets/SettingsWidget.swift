@@ -11,19 +11,49 @@ import SwiftUI
 struct SettingsWidget: View {
     @EnvironmentObject var weatherAgent: WeatherAgent
     
+    @State var isUsingDeviceGPS: Bool = false
+    @State var remoteDeviceIP: String = ""
+    
     var body: some View {
         Form {
-            HStack {
-                Stepper(value: $weatherAgent.timerDurationPublicValue, in: 1 ... 60) {
-                    Text("Secondi di aggiornamento del meteo")
-                        .font(.custom("Futura", size: 25))
+            Section(header: Text("Meteo")) {
+                HStack {
+                    Stepper(value: $weatherAgent.timerDurationPublicValue, in: 1 ... 60) {
+                        Text("Secondi di aggiornamento del meteo")
+                            .font(.custom("Futura", size: 25))
+                    }
+                    Text("\(self.weatherAgent.timerDurationPublicValue)")
+                    .font(.custom("Futura", size: 20))
                 }
-                Text("\(self.weatherAgent.timerDurationPublicValue)")
-                .font(.custom("Futura", size: 20))
+                .frame(minHeight: 60)
             }
-            .frame(minHeight: 60)
+            
+            Section(header: Text("Contachilometri")) {
+                Toggle(isOn: $isUsingDeviceGPS, label: { Text("Usa il GPS dell'iPad").font(.custom("Futura", size: 25)) })
+                .frame(minHeight: 60)
+                if isUsingDeviceGPS {
+                    HStack {
+                        Text("IP del dispositivo remoto").font(.custom("Futura", size: 25))
+                        Spacer()
+                        TextField("Indirizzo IP", text: $remoteDeviceIP)
+                            .frame(width: 200)
+                    }.frame(minHeight: 60)
+                }
+                
+            }
+            
+            Button(action: save) { Text("Salva impostazioni") }
             
         }
+        .onAppear {
+            self.isUsingDeviceGPS = isUsingRemoteNotifications
+            self.remoteDeviceIP = remoteIPforSpeed
+        }
+    }
+    
+    func save() {
+        isUsingRemoteNotifications = self.isUsingDeviceGPS
+        remoteIPforSpeed = self.remoteDeviceIP
     }
 }
 

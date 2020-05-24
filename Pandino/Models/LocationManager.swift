@@ -39,6 +39,12 @@ class TeslaLocationManager: NSObject, CLLocationManagerDelegate, ObservableObjec
             self.lm.startUpdatingLocation()
         }
         
+        NotificationCenter.default.addObserver(forName: .remoteSpeedNotification, object: nil, queue: .main) { (notification) in
+            if isUsingRemoteNotifications {
+                guard let remoteSpeedMessage = notification.object as? GPSMessage else { return }
+                self.speed = Double(remoteSpeedMessage.speed)
+            }
+        }
     }
         
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

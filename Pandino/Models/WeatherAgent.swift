@@ -10,13 +10,7 @@ import Foundation
 import SwiftUI
 import DXNetworkManager
 
-var weatherUpdateTime: Double {
-    get {
-        return UserDefaults.standard.double(forKey: "weatherUpdateTime")
-    } set {
-        UserDefaults.standard.set(newValue, forKey: "weatherUpdateTime")
-    }
-}
+
 
 
 class WeatherAgent: ObservableObject {
