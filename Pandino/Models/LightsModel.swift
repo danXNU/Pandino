@@ -8,6 +8,28 @@
 
 import Foundation
 import CoreBluetooth
+import UIKit
+
+class ColorPickerModel: NSObject, ObservableObject {
+    @Published var isShowed: Bool = false
+    @Published var selectedColor: UIColor = .red
+    
+    var allColors: [UIColor] = [
+        .red, .orange, .yellow, .green, .blue,
+        UIColor(red: 180/255, green: 238/255, blue: 180/255, alpha: 1.0),
+        .purple, .white
+    ]
+    
+    func getOffset(forIndex index: Int) -> CGSize {
+        if !self.isShowed {
+            return .zero
+        }
+        let t = CGFloat(Double.pi * 2) / 8 * CGFloat(index)
+        let x = sin(t) * 60 + 0//r = 30, d = 60
+        let y = cos(t) * 60 + 0
+        return CGSize(width: x, height: y)
+    }
+}
 
 class LightsManager: NSObject, ObservableObject, CBCentralManagerDelegate {
 
@@ -24,50 +46,50 @@ class LightsManager: NSObject, ObservableObject, CBCentralManagerDelegate {
                                                          0x00, 0x00, 0x00, 0x00,
                                                          0x00, 0x00, 0x00, 0x32])
     
-    public let redColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0xff, //done;
+    public static let redColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0xff, //done;
         0x00, 0x00, 0x00, 0xff,
         0xae, 0x54, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x00,
         0x00, 0x00, 0x00, 0xce])
     
     
-    public let orangeColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0xff, //done;
+    public static let orangeColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0xff, //done;
         0x7f, 0x00, 0x00, 0xff,
         0xae, 0x54, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x00,
         0x00, 0x00, 0x00, 0xb1])
     
-    public let yellowColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0xff, //done;
+    public static let yellowColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0xff, //done;
         0xff, 0x00, 0x00, 0xff,
         0xae, 0x54, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x31])
     
-    public let greenColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0x00, //done;
+    public static let greenColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0x00, //done;
         0xff, 0x00, 0x00, 0xff,
         0xae, 0x54, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x00,
         0x00, 0x00, 0x00, 0xce])
     
-    public let blueColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0x00, //done;
+    public static let blueColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0x00, //done;
         0x00, 0xff, 0x00, 0xff,
         0xae, 0x54, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x00,
         0x00, 0x00, 0x00, 0xce])
     
-    public let lightBlueColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0x00, //done;
+    public static let lightBlueColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0x00, //done;
         0xff, 0xff, 0x00, 0xff,
         0xae, 0x54, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x31])
     
-    public let purpleColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0x8b, //done;
+    public static let purpleColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0x8b, //done;
         0x00, 0xff, 0x00, 0xff,
         0xae, 0x54, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x45])
     
-    public let whiteColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0xff, //done
+    public static let whiteColor: Data = Data.getMessage(withBytes: [0x33, 0x05, 0x02, 0xff, //done
         0xff, 0xff, 0x01, 0xff,
         0xae, 0x54, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x00,
@@ -86,6 +108,17 @@ class LightsManager: NSObject, ObservableObject, CBCentralManagerDelegate {
         0x33, 0x04, 0x14, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x23
     ])
 
+    private var colorMap: [UIColor: Data] = [
+        .red : redColor,
+        .orange: orangeColor,
+        .yellow: yellowColor,
+        .green: greenColor,
+        .blue: blueColor,
+        UIColor(red: 180/255, green: 238/255, blue: 180/255, alpha: 1.0): lightBlueColor,
+        .purple: purpleColor,
+        .white: whiteColor
+    ]
+    
     private var centralManager: CBCentralManager!
     private var lighsPeripheral: CBPeripheral!
     
@@ -100,7 +133,7 @@ class LightsManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     @Published var isEstablishingConnection: Bool = false
     
     @Published var brightnessLevel : Int = 2
-
+    @Published var selectedColor: UIColor = .white
     
     override init() {
         super.init()
@@ -144,6 +177,12 @@ class LightsManager: NSObject, ObservableObject, CBCentralManagerDelegate {
         } else {
             centralManager.scanForPeripherals(withServices: nil, options: nil)
             isEstablishingConnection = true
+        }
+    }
+    
+    public func setLed(color: UIColor) {
+        if let colorMessageData = self.colorMap[color] {
+            self.write(msgData: colorMessageData)
         }
     }
     
