@@ -16,17 +16,19 @@ class GPSClient {
     
     init() {
         initializeConnection()
+        setupObservers()
     }
     
-    func initializeConnection() {
-        self.connection = NWConnection(host: .init("192.168.1.230"), port: 2905, using: .tcp)
+    func initializeConnection(remoteIP: String = remoteIPforSpeed) {
+        print("Starting connection to remote device...")
+        self.connection = NWConnection(host: .init(remoteIP), port: 2905, using: .tcp)
         self.connection?.stateUpdateHandler = { state in
             switch state {
             case .failed(let err):
                 print("Error connection: \(err)")
                 self.isConnected = false
             case .ready:
-                print("Ready")
+                print("Connection to remote device established successfully")
                 self.isConnected = true
             default:
                 print("Connection state changed: \(state)")
@@ -44,6 +46,7 @@ class GPSClient {
             
             guard let receivedSpeedMessage = try? JSONDecoder().decode(GPSMessage.self, from: data) else {
                 print("Error decoding received message")
+                print("RAW MESSAGE: \(String(data: data, encoding: .utf8) ?? "NULL")")
                 return
             }
             
@@ -54,6 +57,19 @@ class GPSClient {
         self.connection?.start(queue: DispatchQueue.global(qos: .utility))
     }
     
+    func stopConnection() {
+        self.connection?.cancel()
+        self.connection = nil
+        print("Stopped connection to remote device IP")
+    }
+    
+    func setupObservers() {
+        NotificationCenter.default.addObserver(forName: .remoteDeviceIPChanged, object: nil, queue: .main) { (notification) in
+            print("Received notification for changes to remote device IP")
+            self.stopConnection()
+            self.initializeConnection()
+        }
+    }
 }
 
 struct GPSMessage: Codable {

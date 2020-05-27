@@ -52,8 +52,14 @@ struct SettingsWidget: View {
     }
     
     func save() {
+        let savedIP = remoteIPforSpeed
+        
         isUsingRemoteNotifications = self.isUsingDeviceGPS
         remoteIPforSpeed = self.remoteDeviceIP
+        
+        if savedIP != remoteIPforSpeed {
+            NotificationCenter.default.post(name: .remoteDeviceIPChanged, object: nil)
+        }
     }
 }
 

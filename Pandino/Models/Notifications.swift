@@ -10,4 +10,5 @@ import Foundation
 
 extension Notification.Name {
     static let remoteSpeedNotification = Notification.Name("remoteSpeedNotification")
+    static let remoteDeviceIPChanged = Notification.Name("remoteDeviceIPNotification")
 }

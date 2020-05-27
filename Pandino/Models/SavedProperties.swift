@@ -28,6 +28,6 @@ var remoteIPforSpeed: String {
     get {
         return UserDefaults.standard.string(forKey: "remoteIPforSpeed") ?? "localhost"
     } set {
-        UserDefaults.standard.string(forKey: "remoteIPforSpeed")
+        UserDefaults.standard.set(newValue, forKey: "remoteIPforSpeed")
     }
 }
