@@ -70,6 +70,9 @@ struct TopBar: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(maxHeight: geo.size.height / 2.3)
+                            .onTapGesture {
+                                NotificationCenter.default.post(name: .remoteDeviceIPChanged, object: nil) //force restart of client connection by simulating IP changes
+                        }
                     }
                 }
                 .padding([.leading, .trailing], 10)
