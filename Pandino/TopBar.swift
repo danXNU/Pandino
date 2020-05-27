@@ -13,6 +13,7 @@ struct TopBar: View {
     @EnvironmentObject var widgetAgent: WidgetAgent
     @EnvironmentObject var weatherAgent: WeatherAgent
     @EnvironmentObject var ledManager: LightsManager
+    @EnvironmentObject var externalGPSClient: GPSClient
     
     var body: some View {
         GeometryReader { geo in
@@ -63,8 +64,15 @@ struct TopBar: View {
                     }
                     
                     Spacer()
+                    
+                    if self.externalGPSClient.isConnected {
+                        Image(systemName: "location.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxHeight: geo.size.height / 2.3)
+                    }
                 }
-                .padding(.leading, 10)
+                .padding([.leading, .trailing], 10)
                 
                     
             }

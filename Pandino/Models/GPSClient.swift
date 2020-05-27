@@ -9,13 +9,16 @@
 import Foundation
 import Network
 
-class GPSClient {
+class GPSClient: ObservableObject {
     
     var connection: NWConnection?
-    var isConnected: Bool = false
+    @Published var isConnected: Bool = false
     
     init() {
-        initializeConnection()
+        if isUsingRemoteNotifications {
+            initializeConnection()
+        }
+        
         setupObservers()
     }
     
@@ -29,10 +32,14 @@ class GPSClient {
                 self.isConnected = false
             case .ready:
                 print("Connection to remote device established successfully")
-                self.isConnected = true
+                DispatchQueue.main.async {
+                    self.isConnected = true
+                }                
             default:
                 print("Connection state changed: \(state)")
-                self.isConnected = false
+                DispatchQueue.main.async {
+                    self.isConnected = false
+                }
             }
         }
         
@@ -58,6 +65,7 @@ class GPSClient {
     }
     
     func stopConnection() {
+        self.isConnected = false
         self.connection?.cancel()
         self.connection = nil
         print("Stopped connection to remote device IP")
@@ -68,6 +76,14 @@ class GPSClient {
             print("Received notification for changes to remote device IP")
             self.stopConnection()
             self.initializeConnection()
+        }
+        
+        NotificationCenter.default.addObserver(forName: .remoteDeviceIsUsedPreferenceChanged, object: nil, queue: .main) { (notification) in
+            if isUsingRemoteNotifications {
+                self.initializeConnection()
+            } else {
+                self.stopConnection()
+            }
         }
     }
 }

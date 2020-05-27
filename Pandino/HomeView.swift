@@ -14,6 +14,7 @@ struct HomeView: View {
     @EnvironmentObject var weatherAgent: WeatherAgent
     @EnvironmentObject var mapAgent: MapAgent
     @EnvironmentObject var ledAgent: LightsManager
+    @EnvironmentObject var remoteGpsClient: GPSClient
     
     var body: some View {
         GeometryReader { geo in
@@ -52,11 +53,17 @@ struct HomeView: View {
                                 
                                 VStack {
                                     #if !targetEnvironment(macCatalyst)
-                                    TopBar().environmentObject(self.locationAgent).environmentObject(self.widgetAgent).environmentObject(self.weatherAgent)
+                                    TopBar()
+                                        .environmentObject(self.locationAgent)
+                                        .environmentObject(self.widgetAgent)
+                                        .environmentObject(self.weatherAgent)
                                         .frame(maxHeight: 45)
                                         .edgesIgnoringSafeArea(.top)
                                     #else
-                                    TopBar().environmentObject(self.locationAgent).environmentObject(self.widgetAgent).environmentObject(self.weatherAgent)
+                                    TopBar()
+                                        .environmentObject(self.locationAgent)
+                                        .environmentObject(self.widgetAgent)
+                                        .environmentObject(self.weatherAgent)
                                         .frame(maxHeight: 45)
                                     #endif
                                     Spacer()

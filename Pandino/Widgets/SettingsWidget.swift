@@ -39,10 +39,10 @@ struct SettingsWidget: View {
                             .frame(width: 200)
                     }.frame(minHeight: 60)
                 }
-                
+              Button(action: save) { Text("Salva impostazioni") }
             }
             
-            Button(action: save) { Text("Salva impostazioni") }
+            
             
         }
         .onAppear {
@@ -60,6 +60,7 @@ struct SettingsWidget: View {
         if savedIP != remoteIPforSpeed {
             NotificationCenter.default.post(name: .remoteDeviceIPChanged, object: nil)
         }
+        NotificationCenter.default.post(name: .remoteDeviceIsUsedPreferenceChanged, object: nil)
     }
 }
 
