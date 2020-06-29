@@ -52,7 +52,7 @@ class WidgetAgent: ObservableObject {
         }
     }
     
-    private func closeWidget() {
+    public func closeWidget() {
         self.selectedWidget = .consumi
         self.isShowingWidget = false
         self.widgetOffset = CGSize(width: 0, height: -1000)

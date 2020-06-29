@@ -82,67 +82,64 @@ struct HomeView: View {
                 if self.widgetAgent.isShowingWidget {
                 
                     if self.widgetAgent.selectedWidget == .consumi {
-                        Widget(type: .consumi) {
-                            ConsumiWidgetView()
-                        }
-                        .environmentObject(self.widgetAgent)
+                        ConsumiWidgetView()
+                            .widgetify(title: WidgetType.consumi.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
+                            
+//                        .environmentObject(self.widgetAgent)
                         .frame(minWidth: 300, minHeight: 300)
                         .frame(maxWidth: geo.size.width * 0.7, maxHeight: geo.size.height * 0.6)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     } else if self.widgetAgent.selectedWidget == .info {
-                        Widget(type: .info) {
+                        
                             InfoWidget()
-                        }
-                        .environmentObject(self.widgetAgent)
+                                .widgetify(title: WidgetType.info.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
+                        
+                        
                         .frame(minWidth: 300, minHeight: 300)
                         .frame(maxWidth: geo.size.width * 0.8, maxHeight: geo.size.height * 0.8)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                         
                     } else if self.widgetAgent.selectedWidget == .settings {
-                        Widget(type: .settings) {
+                        
                             SettingsWidget().environmentObject(self.weatherAgent)
-                        }
-                        .environmentObject(self.widgetAgent)
+                                .widgetify(title: WidgetType.settings.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
+                        
                         .frame(minWidth: 300, minHeight: 300)
                         .frame(width: geo.size.width / 1.5, height: geo.size.height / 1.3)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     } else if self.widgetAgent.selectedWidget == .fari {
-                        Widget(type: .fari) {
-                            FariWidget()
-                        }
-                        .environmentObject(self.widgetAgent)
+                        
+                            FariWidget().widgetify(title: WidgetType.fari.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
+                        
                         .frame(minWidth: 300, minHeight: 300)
                         .frame(width: geo.size.width / 2, height: geo.size.height / 2.1)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     } else if self.widgetAgent.selectedWidget == .coordinate {
-                        Widget(type: .coordinate) {
-                            CoordinateWidget().environmentObject(self.locationAgent)
-                        }
-                        .environmentObject(self.widgetAgent)
+                        
+                            CoordinateWidget().environmentObject(self.locationAgent).widgetify(title: WidgetType.coordinate.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
+                        
                         .frame(minWidth: 300, minHeight: 300)
                         .frame(width: geo.size.width / 2, height: geo.size.height / 2.1)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     }
                     else if self.widgetAgent.selectedWidget == .weather {
-                        Widget(type: .weather) {
-                            WeatherWidget().environmentObject(self.weatherAgent)
-                        }
-                        .environmentObject(self.widgetAgent)
+                        
+                            WeatherWidget().environmentObject(self.weatherAgent).widgetify(title: WidgetType.weather.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
+                        
                         .frame(minWidth: 350, minHeight: 350)
                         .frame(width: geo.size.width * 0.6, height: geo.size.height * 0.6)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     }
                     else if self.widgetAgent.selectedWidget == .music {
-                        Widget(type: .music) {
-                            MusicWidget()
-                        }
-                        .environmentObject(self.widgetAgent)
+                        
+                            MusicWidget().widgetify(title: WidgetType.music.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
+                        
                         .frame(minWidth: 350, minHeight: 350)
                         .frame(width: geo.size.width * 0.6, height: geo.size.height * 0.6)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)

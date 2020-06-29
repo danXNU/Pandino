@@ -43,6 +43,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+        
+        UIApplication.shared.isIdleTimerDisabled = true
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
