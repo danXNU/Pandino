@@ -20,7 +20,7 @@ class MapAgent : ObservableObject {
         }
     }
     
-    @Published public var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: .init(latitudeDelta: 0.1, longitudeDelta: 0.1))
+    
     
     public func setMapType(from intValue: Int) {
         switch intValue {
