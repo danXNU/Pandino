@@ -17,19 +17,15 @@ class WeatherAgent: ObservableObject {
     private var timerScheduler: Timer?
     
     public var errString: String = ""
-    @Published var timerDurationPublicValue: Int = Int(weatherUpdateTime) {
-        didSet {
-            self.changeTimerDuration(seconds: Double(timerDurationPublicValue))
-        }
-    }
+    
     
     @Published var temperature: Double = 0
     @Published var temperaturaPercepita: Double = 0
     @Published var pressione: Int = 0
     @Published var humidity: Int = 0
     
-    
-    private func changeTimerDuration(seconds: Double) {
+
+    public func changeTimerDuration(seconds: Double) {
         weatherUpdateTime = seconds
         print("Changed weather timer duration. Resetto il timer")
         self.stop()

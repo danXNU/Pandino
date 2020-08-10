@@ -11,39 +11,25 @@ import SwiftUI
 struct SettingsWidget: View {
     @EnvironmentObject var weatherAgent: WeatherAgent
     
-    @State var isUsingDeviceGPS: Bool = false
-    @State var remoteDeviceIP: String = ""
+    @AppStorage("weatherUpdateTime") var weatherTimer: Double = 60
     
     var body: some View {
         Form {
             Section(header: Text("Meteo")) {
                 HStack {
-                    Stepper(value: $weatherAgent.timerDurationPublicValue, in: 1 ... 60) {
+                    Stepper(value: $weatherTimer, in: 1.0 ... 60.0) {
                         Text("Secondi di aggiornamento del meteo")
                             .font(.custom("Futura", size: 25))
                     }
-                    Text("\(self.weatherAgent.timerDurationPublicValue)")
+                    Text("\(weatherTimer)")
                     .font(.custom("Futura", size: 20))
                 }
                 .frame(minHeight: 60)
             }
         }
-        .onAppear {
-            self.isUsingDeviceGPS = isUsingRemoteNotifications
-            self.remoteDeviceIP = remoteIPforSpeed
+        .onChange(of: weatherTimer) { (_) in
+            self.weatherAgent.changeTimerDuration(seconds: weatherTimer)
         }
-    }
-    
-    func save() {
-        let savedIP = remoteIPforSpeed
-        
-        isUsingRemoteNotifications = self.isUsingDeviceGPS
-        remoteIPforSpeed = self.remoteDeviceIP
-        
-        if savedIP != remoteIPforSpeed {
-            NotificationCenter.default.post(name: .remoteDeviceIPChanged, object: nil)
-        }
-        NotificationCenter.default.post(name: .remoteDeviceIsUsedPreferenceChanged, object: nil)
     }
 }
 

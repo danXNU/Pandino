@@ -15,19 +15,3 @@ var weatherUpdateTime: Double {
         UserDefaults.standard.set(newValue, forKey: "weatherUpdateTime")
     }
 }
-
-var isUsingRemoteNotifications: Bool {
-    get {
-        return UserDefaults.standard.bool(forKey: "using-remote-speed")
-    } set {
-        UserDefaults.standard.set(newValue, forKey: "using-remote-speed")
-    }
-}
-
-var remoteIPforSpeed: String {
-    get {
-        return UserDefaults.standard.string(forKey: "remoteIPforSpeed") ?? "localhost"
-    } set {
-        UserDefaults.standard.set(newValue, forKey: "remoteIPforSpeed")
-    }
-}
