@@ -14,52 +14,40 @@ struct CarNavigationView: View {
     
     var body: some View {
         GeometryReader { geo in
-            ZStack {
+            VStack {
+                HStack {
+                    Image("tesla-logo")
+                        .resizable()
+                        .aspectRatio(1.0, contentMode: .fit)
+                        .accentColor(Color(UIColor.label))
+                        .frame(height: 55)
+                    
+                    Text("CarOS")
+                        .font(Font.custom("Futura", size: 65))
+                    
+                }
+                .frame(maxWidth: geo.size.width)
                 
-                Rectangle()
-                    .foregroundColor(Color(UIColor.systemBackground))
-                    .edgesIgnoringSafeArea(.all)
-                
+                Spacer()
                 
                 VStack {
-                    HStack {
-                        Image("tesla-logo")
-                            .resizable()
-                            .aspectRatio(1.0, contentMode: .fit)
-                            .accentColor(Color(UIColor.label))
-                            .frame(height: 55)
-                        
-                        Text("Pandino")
-                            .font(Font.custom("Futura", size: 65))
-                        
-                    }
-                    .frame(maxWidth: geo.size.width, maxHeight: geo.size.height)
+                    Text("\(Int(self.locationAgent.speed))")
+                        .font(Font.system(size: 60, weight: .bold, design: .default))
+                        .foregroundColor(self.locationAgent.speed >= 100 ? Color.red : Color(UIColor.label))
                     
-                    Spacer()
-                    
-                    VStack {
-                        Text("\(Int(self.locationAgent.speed))")
-                            .font(Font.system(size: 60, weight: .bold, design: .default))
-                            .foregroundColor(self.locationAgent.speed >= 100 ? Color.red : Color(UIColor.label))
-                        
-                        Text("Km/h")
-                            .font(Font.system(size: 30))
-                            .foregroundColor(self.locationAgent.speed >= 100 ? Color.red : Color(UIColor.label))
-                    }
-                    
-                    //                Spacer()
-                    Image("fiat-panda")
-                        .resizable()
-                        .aspectRatio(contentMode: ContentMode.fit)
-                        .frame(width: geo.size.width - 30)//, height: 300)
-                    
-                    Spacer()
-                    
-                    
-                    BottomBar()
-                        .frame(width: geo.size.width, height: 90)
+                    Text("Km/h")
+                        .font(Font.system(size: 30))
+                        .foregroundColor(self.locationAgent.speed >= 100 ? Color.red : Color(UIColor.label))
                 }
+                
+                
+                Spacer()
+                
+                
+                BottomBar()
+                    .frame(width: geo.size.width, height: 90)
             }
+            .padding(.top)
         }
         
     }
