@@ -12,8 +12,6 @@ struct TopBar: View {
     @EnvironmentObject var locationAgent: TeslaLocationManager
     @EnvironmentObject var widgetAgent: WidgetAgent
     @EnvironmentObject var weatherAgent: WeatherAgent
-    @EnvironmentObject var ledManager: LightsManager
-    @EnvironmentObject var externalGPSClient: GPSClient
     
     var body: some View {
         GeometryReader { geo in
@@ -42,13 +40,7 @@ struct TopBar: View {
                         .font(.custom("Futura", size: geo.size.height / 2.5))
                     Divider()
                     
-                    Image(systemName: self.ledManager.isConnected ? "wifi" : "wifi.slash")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxHeight: geo.size.height / 2.3)
-                        .onTapGesture {
-                            self.ledManager.toggleConnection()
-                        }
+                    
                     
                     Spacer()
                     
@@ -64,16 +56,7 @@ struct TopBar: View {
                     }
                     
                     Spacer()
-                    
-                    if self.externalGPSClient.isConnected {
-                        Image(systemName: "location.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxHeight: geo.size.height / 2.3)
-                            .onTapGesture {
-                                NotificationCenter.default.post(name: .remoteDeviceIPChanged, object: nil) //force restart of client connection by simulating IP changes
-                        }
-                    }
+                                        
                 }
                 .padding([.leading, .trailing], 10)
                 

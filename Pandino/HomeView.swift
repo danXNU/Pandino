@@ -13,15 +13,13 @@ struct HomeView: View {
     @EnvironmentObject var locationAgent: TeslaLocationManager
     @EnvironmentObject var weatherAgent: WeatherAgent
     @EnvironmentObject var mapAgent: MapAgent
-    @EnvironmentObject var ledAgent: LightsManager
-    @EnvironmentObject var remoteGpsClient: GPSClient
     
     var body: some View {
         GeometryReader { geo in
             ZStack {
                 VStack {
                     HStack {
-                        CarNavigationView().environmentObject(self.widgetAgent).environmentObject(self.locationAgent)
+                        CarNavigationView()
                             .frame(width: geo.size.width / 3)
                         
                         GeometryReader { mapViewSize in
@@ -73,8 +71,8 @@ struct HomeView: View {
                         
                         
                     }
-                    BottomBar()
-                        .frame(maxHeight: 100)
+//                    BottomBar()
+//                        .frame(maxHeight: 100)
                 }
                 
                 
@@ -108,14 +106,6 @@ struct HomeView: View {
                         
                         .frame(minWidth: 300, minHeight: 300)
                         .frame(width: geo.size.width / 1.5, height: geo.size.height / 1.3)
-                        .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
-                        .animation(.easeIn)
-                    } else if self.widgetAgent.selectedWidget == .fari {
-                        
-                            FariWidget().widgetify(title: WidgetType.fari.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
-                        
-                        .frame(minWidth: 300, minHeight: 300)
-                        .frame(width: geo.size.width / 2, height: geo.size.height / 2.1)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
                     } else if self.widgetAgent.selectedWidget == .coordinate {

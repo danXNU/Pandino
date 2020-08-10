@@ -17,8 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @ObservedObject var locationHelper = TeslaLocationManager()
     @ObservedObject var weatherAgent = WeatherAgent()
     @ObservedObject var mapAgent = MapAgent()
-    @ObservedObject var lightsManager = LightsManager()
-    @ObservedObject var externalGpsClient = GPSClient()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -33,8 +31,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .environmentObject(locationHelper)
             .environmentObject(weatherAgent)
             .environmentObject(mapAgent)
-            .environmentObject(lightsManager)
-            .environmentObject(externalGpsClient)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

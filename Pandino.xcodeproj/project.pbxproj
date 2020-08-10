@@ -14,10 +14,7 @@
 		DB66D23923C62EA30027BCDF /* CoordinateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB66D23823C62EA30027BCDF /* CoordinateWidget.swift */; };
 		DB68B88623C65745008A8E51 /* WeatherAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB68B88523C65745008A8E51 /* WeatherAgent.swift */; };
 		DB68B88823C67C04008A8E51 /* WeatherWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB68B88723C67C04008A8E51 /* WeatherWidget.swift */; };
-		DB6C437E23B8ED7A001A2E06 /* FariWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6C437D23B8ED7A001A2E06 /* FariWidget.swift */; };
-		DB81EA99242BB7270033D57E /* LightsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB81EA98242BB7270033D57E /* LightsModel.swift */; };
 		DB81EA9B242BBC320033D57E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB81EA9A242BBC320033D57E /* Extensions.swift */; };
-		DB8A6C5C2479B092005B36A0 /* GPSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8A6C5B2479B092005B36A0 /* GPSClient.swift */; };
 		DB8E9C8123B3DE23004726DD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8023B3DE23004726DD /* MapView.swift */; };
 		DB8E9C8523B3ECB1004726DD /* WidgetAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */; };
 		DB8E9C8823B3F1A6004726DD /* InfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8E9C8723B3F1A6004726DD /* InfoWidget.swift */; };
@@ -58,10 +55,7 @@
 		DB66D23823C62EA30027BCDF /* CoordinateWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateWidget.swift; sourceTree = "<group>"; };
 		DB68B88523C65745008A8E51 /* WeatherAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAgent.swift; sourceTree = "<group>"; };
 		DB68B88723C67C04008A8E51 /* WeatherWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWidget.swift; sourceTree = "<group>"; };
-		DB6C437D23B8ED7A001A2E06 /* FariWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FariWidget.swift; sourceTree = "<group>"; };
-		DB81EA98242BB7270033D57E /* LightsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsModel.swift; sourceTree = "<group>"; };
 		DB81EA9A242BBC320033D57E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		DB8A6C5B2479B092005B36A0 /* GPSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSClient.swift; sourceTree = "<group>"; };
 		DB8E9C8023B3DE23004726DD /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetAgent.swift; sourceTree = "<group>"; };
 		DB8E9C8723B3F1A6004726DD /* InfoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWidget.swift; sourceTree = "<group>"; };
@@ -122,9 +116,7 @@
 				DB68B88523C65745008A8E51 /* WeatherAgent.swift */,
 				DBB9A36A23CA78A0000C85C8 /* MapAgent.swift */,
 				DB8E9C8423B3ECB1004726DD /* WidgetAgent.swift */,
-				DB81EA98242BB7270033D57E /* LightsModel.swift */,
 				DB81EA9A242BBC320033D57E /* Extensions.swift */,
-				DB8A6C5B2479B092005B36A0 /* GPSClient.swift */,
 				DBF3D01E247B2AF300B6E6B7 /* Notifications.swift */,
 				DBF3D020247B2B7C00B6E6B7 /* SavedProperties.swift */,
 			);
@@ -147,7 +139,6 @@
 				DBDA411323B28A3B00EE40CD /* Widget.swift */,
 				DB8E9C8723B3F1A6004726DD /* InfoWidget.swift */,
 				DBD24B7D23B4265900DBB6FD /* SettingsWidget.swift */,
-				DB6C437D23B8ED7A001A2E06 /* FariWidget.swift */,
 				DB66D23823C62EA30027BCDF /* CoordinateWidget.swift */,
 				DB68B88723C67C04008A8E51 /* WeatherWidget.swift */,
 				DB64968D23CCBE2C009036A2 /* MusicWidget.swift */,
@@ -268,7 +259,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Dani Tox";
 				TargetAttributes = {
 					DBFB2F2323AC340D001027D3 = {
@@ -330,13 +321,11 @@
 				DB96135A23B195B1008BEC34 /* CloseButton.swift in Sources */,
 				DB8E9C8823B3F1A6004726DD /* InfoWidget.swift in Sources */,
 				DB66D23723C61D780027BCDF /* Bussola.swift in Sources */,
-				DB8A6C5C2479B092005B36A0 /* GPSClient.swift in Sources */,
 				DBF3D021247B2B7C00B6E6B7 /* SavedProperties.swift in Sources */,
 				DBD24B7E23B4265900DBB6FD /* SettingsWidget.swift in Sources */,
 				DB8E9C8123B3DE23004726DD /* MapView.swift in Sources */,
 				DB66D23323C60E2B0027BCDF /* TopBar.swift in Sources */,
 				DBDA411623B2E3A400EE40CD /* CarNavigationView.swift in Sources */,
-				DB6C437E23B8ED7A001A2E06 /* FariWidget.swift in Sources */,
 				DBFB2F2823AC340D001027D3 /* AppDelegate.swift in Sources */,
 				DB81EA9B242BBC320033D57E /* Extensions.swift in Sources */,
 				DB96135823B188A6008BEC34 /* HomeView.swift in Sources */,
@@ -348,7 +337,6 @@
 				DB8E9C8523B3ECB1004726DD /* WidgetAgent.swift in Sources */,
 				DB68B88823C67C04008A8E51 /* WeatherWidget.swift in Sources */,
 				DBB9A36B23CA78A0000C85C8 /* MapAgent.swift in Sources */,
-				DB81EA99242BB7270033D57E /* LightsModel.swift in Sources */,
 				DBB9A36D23CA7D51000C85C8 /* BottomBar.swift in Sources */,
 				DB66D23923C62EA30027BCDF /* CoordinateWidget.swift in Sources */,
 				DBFB2F2C23AC340D001027D3 /* ConsumiWidgetView.swift in Sources */,
@@ -412,6 +400,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -472,6 +461,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
