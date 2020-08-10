@@ -10,9 +10,6 @@ import Foundation
 import SwiftUI
 import DXNetworkManager
 
-
-
-
 class WeatherAgent: ObservableObject {
     private let apiKey = "9bf018ec677f60afe839ae0b26f74721"
     

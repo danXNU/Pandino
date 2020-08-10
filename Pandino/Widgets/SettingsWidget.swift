@@ -27,23 +27,6 @@ struct SettingsWidget: View {
                 }
                 .frame(minHeight: 60)
             }
-            
-            Section(header: Text("Contachilometri")) {
-                Toggle(isOn: $isUsingDeviceGPS, label: { Text("Usa il GPS di un dispositivo esterno").font(.custom("Futura", size: 25)) })
-                .frame(minHeight: 60)
-                if isUsingDeviceGPS {
-                    HStack {
-                        Text("IP del dispositivo remoto").font(.custom("Futura", size: 25))
-                        Spacer()
-                        TextField("Indirizzo IP", text: $remoteDeviceIP)
-                            .frame(width: 200)
-                    }.frame(minHeight: 60)
-                }
-              Button(action: save) { Text("Salva impostazioni") }
-            }
-            
-            
-            
         }
         .onAppear {
             self.isUsingDeviceGPS = isUsingRemoteNotifications
