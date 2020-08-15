@@ -32,7 +32,7 @@ struct TopBar: View {
                             .padding()	
                     )
                     .onTapGesture {
-                        self.widgetAgent.toggle(with: .weather)
+                        self.widgetAgent.toggle(with: .info)
                     }
                     
                     Divider()

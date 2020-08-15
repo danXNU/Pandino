@@ -30,13 +30,13 @@ struct BottomBar: View {
                     
                     
                     
-                    Image(systemName: "music.note")
+                    Image(systemName: "timer")
                         .resizable()
                         .aspectRatio(contentMode: ContentMode.fit)
                         .foregroundColor(Color.gray.opacity(1.0))
                         .frame(width: 50, height: 50)
                         .onTapGesture {
-                            self.widgetAgent.toggle(with: .music)
+                            self.widgetAgent.toggle(with: .timer)
                         }
                     
                     
@@ -45,7 +45,6 @@ struct BottomBar: View {
                         .resizable()
                         .foregroundColor(Color.gray)
                         .frame(width: 50, height: 50)
-                        //                .offset(x: -20, y: 0)
                         .onTapGesture {
                             self.widgetAgent.toggle(with: .info)
                         }

@@ -10,30 +10,24 @@ import Foundation
 import SwiftUI
 
 enum WidgetType {
-    case consumi
     case info
     case settings
-    case fari
     case coordinate
-    case weather
-    case music
+    case timer
     
     var widgetBarTitle: String {
         switch self {
-        case .consumi: return "Consumi"
         case .info: return "Info"
-        case .settings: return "Impostazioni"
-        case .fari: return "Fari"
-        case .coordinate: return "Coordinate"
-        case .weather: return "Tempo"
-        case .music: return "Musica"
+        case .settings: return "Settings"
+        case .coordinate: return "Coordinates"
+        case .timer: return "Timer"
         }
     }
 }
 
 class WidgetAgent: ObservableObject {
     @Published var isShowingWidget: Bool = false
-    @Published var selectedWidget: WidgetType = .consumi
+    @Published var selectedWidget: WidgetType = .timer
     @Published var widgetOffset: CGSize = CGSize(width: 0, height: -1000)
     
     public func toggle(with widgetType: WidgetType) {
@@ -53,7 +47,7 @@ class WidgetAgent: ObservableObject {
     }
     
     public func closeWidget() {
-        self.selectedWidget = .consumi
+        self.selectedWidget = .timer
         self.isShowingWidget = false
         self.widgetOffset = CGSize(width: 0, height: -1000)
     }

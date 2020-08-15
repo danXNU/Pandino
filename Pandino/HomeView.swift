@@ -25,20 +25,13 @@ struct HomeView: View {
                         CarNavigationView()
                             .frame(width: geo.size.width / 3)
                         
-                        Map(coordinateRegion: $region, interactionModes: MapInteractionModes.init(arrayLiteral: .all), showsUserLocation: true, userTrackingMode: nil)
+                        MapView()
                             .edgesIgnoringSafeArea(.all)
                     }
                 }
                 if self.widgetAgent.isShowingWidget {
                     
-                    if self.widgetAgent.selectedWidget == .consumi {
-                        ConsumiWidgetView()
-                            .widgetify(title: WidgetType.consumi.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
-                            .frame(minWidth: 300, minHeight: 300)
-                            .frame(maxWidth: geo.size.width * 0.7, maxHeight: geo.size.height * 0.6)
-                            .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
-                            .animation(.easeIn)
-                    } else if self.widgetAgent.selectedWidget == .info {
+                    if self.widgetAgent.selectedWidget == .info {
                         
                         InfoWidget()
                             .widgetify(title: WidgetType.info.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
@@ -67,18 +60,9 @@ struct HomeView: View {
                             .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                             .animation(.easeIn)
                     }
-                    else if self.widgetAgent.selectedWidget == .weather {
+                    else if self.widgetAgent.selectedWidget == .timer {
                         
-                        WeatherWidget().environmentObject(self.weatherAgent).widgetify(title: WidgetType.weather.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
-                            
-                            .frame(minWidth: 350, minHeight: 350)
-                            .frame(width: geo.size.width * 0.6, height: geo.size.height * 0.6)
-                            .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
-                            .animation(.easeIn)
-                    }
-                    else if self.widgetAgent.selectedWidget == .music {
-                        
-                        MusicWidget().widgetify(title: WidgetType.music.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
+                        TimerWidget().widgetify(title: WidgetType.timer.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
                             
                             .frame(minWidth: 350, minHeight: 350)
                             .frame(width: geo.size.width * 0.6, height: geo.size.height * 0.6)

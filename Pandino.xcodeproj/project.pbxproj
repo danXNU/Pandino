@@ -23,6 +23,7 @@
 		DBB9A36B23CA78A0000C85C8 /* MapAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB9A36A23CA78A0000C85C8 /* MapAgent.swift */; };
 		DBB9A36D23CA7D51000C85C8 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB9A36C23CA7D51000C85C8 /* BottomBar.swift */; };
 		DBD24B7E23B4265900DBB6FD /* SettingsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD24B7D23B4265900DBB6FD /* SettingsWidget.swift */; };
+		DBD8C3A824E76161004A8FBE /* TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8C3A724E76161004A8FBE /* TimerWidget.swift */; };
 		DBDA411423B28A3B00EE40CD /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA411323B28A3B00EE40CD /* Widget.swift */; };
 		DBDA411623B2E3A400EE40CD /* CarNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA411523B2E3A400EE40CD /* CarNavigationView.swift */; };
 		DBF3D01F247B2AF300B6E6B7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3D01E247B2AF300B6E6B7 /* Notifications.swift */; };
@@ -65,6 +66,7 @@
 		DBB9A36A23CA78A0000C85C8 /* MapAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAgent.swift; sourceTree = "<group>"; };
 		DBB9A36C23CA7D51000C85C8 /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		DBD24B7D23B4265900DBB6FD /* SettingsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWidget.swift; sourceTree = "<group>"; };
+		DBD8C3A724E76161004A8FBE /* TimerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWidget.swift; sourceTree = "<group>"; };
 		DBDA411323B28A3B00EE40CD /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
 		DBDA411523B2E3A400EE40CD /* CarNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarNavigationView.swift; sourceTree = "<group>"; };
 		DBF3D01E247B2AF300B6E6B7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				DB66D23823C62EA30027BCDF /* CoordinateWidget.swift */,
 				DB68B88723C67C04008A8E51 /* WeatherWidget.swift */,
 				DB64968D23CCBE2C009036A2 /* MusicWidget.swift */,
+				DBD8C3A724E76161004A8FBE /* TimerWidget.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				DBF3D01F247B2AF300B6E6B7 /* Notifications.swift in Sources */,
 				DB66D23523C612410027BCDF /* LocationManager.swift in Sources */,
 				DB8E9C8523B3ECB1004726DD /* WidgetAgent.swift in Sources */,
+				DBD8C3A824E76161004A8FBE /* TimerWidget.swift in Sources */,
 				DB68B88823C67C04008A8E51 /* WeatherWidget.swift in Sources */,
 				DBB9A36B23CA78A0000C85C8 /* MapAgent.swift in Sources */,
 				DBB9A36D23CA7D51000C85C8 /* BottomBar.swift in Sources */,
@@ -502,7 +506,7 @@
 				DEVELOPMENT_TEAM = R779A64KR9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Pandino/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,7 +531,7 @@
 				DEVELOPMENT_TEAM = R779A64KR9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Pandino/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
