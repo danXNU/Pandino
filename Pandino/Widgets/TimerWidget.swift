@@ -13,20 +13,34 @@ struct TimerWidget: View {
     @State var maxSpeed: Int = 60
     
     @State var errorMsg: String = ""
-    @State var hasStarted: Bool = false
     
+    @ObservedObject var speedWatchAgent: SpeedWatchAgent
+    
+    @ViewBuilder
     var body: some View {
+        if self.speedWatchAgent.state == .settings {
+            self.timerIdleView()
+        }
+        if self.speedWatchAgent.state == .running {
+            self.timerStartedView()
+        }
+        if self.speedWatchAgent.state == .finished {
+            Text("PORCA DI QUELLAAAAA")
+        }
+    }
+    
+    private func timerIdleView() -> some View {
         VStack {
             Text("Speed range")
                 
             Spacer()
             
-            Stepper(onIncrement: { self.minSpeed += 1 }, onDecrement: { self.minSpeed -= 1 }) {
+            Stepper(onIncrement: incrementMinSpeed, onDecrement: decrementMinSpeed) {
                 Text("From: \(minSpeed)")
                 .font(Font.custom("Futura", size: 25))
             }
 
-            Stepper(onIncrement: { self.maxSpeed += 1 }, onDecrement: { self.maxSpeed -= 1 }) {
+            Stepper(onIncrement: incrementMaxSpeed, onDecrement: decrementMaxSpeed) {
                 Text("From: \(maxSpeed)")
                 .font(Font.custom("Futura", size: 25))
             }
@@ -34,14 +48,16 @@ struct TimerWidget: View {
             Spacer()
             
             VStack(spacing: 10) {
-                Button(action: { }) {
+                Button(action: {
+                    self.speedWatchAgent.start(minSpeed: Double(self.minSpeed), maxSpeed: Double(self.maxSpeed))
+                }) {
                     Text("Begin")
                 }
                 .buttonStyle(PandinoButtonStyle())
                 .disabled(!canStart)
                 
                 if canStart {
-                    Text("The stopwatch will start when you will excees the minimun speed that you set")
+                    Text("The stopwatch will start when you will exceed the minimun speed that you set")
                     .font(Font.custom("Futura", size: 15))
                     .foregroundColor(.secondary)
                 } else {
@@ -58,8 +74,43 @@ struct TimerWidget: View {
         .padding()
     }
     
+    private func timerStartedView() -> some View {
+        VStack {
+            Text("\(self.minSpeed) - \(self.maxSpeed) mph")
+            Spacer()
+            
+            Text("\(self.speedWatchAgent.currentSpeed.value) mph")
+                .font(Font.custom("Futura", size: 25))
+            
+            Text("\(String(format: "%.1f", self.speedWatchAgent.timeElapsed))s")
+                .font(Font.custom("Futura", size: 15))
+            
+            Spacer()
+        }
+    }
+    
     private var canStart: Bool {
         return minSpeed < maxSpeed
+    }
+    
+    private func incrementMinSpeed() {
+        self.minSpeed += 1
+    }
+    
+    private func decrementMinSpeed() {
+        if self.minSpeed > 0 {
+            self.minSpeed -= 1
+        }
+    }
+    
+    private func incrementMaxSpeed() {
+        self.maxSpeed += 1
+    }
+    
+    private func decrementMaxSpeed() {
+        if self.maxSpeed > 0 {
+            self.maxSpeed -= 1
+        }
     }
 }
 

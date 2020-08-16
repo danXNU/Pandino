@@ -31,13 +31,13 @@ struct CarNavigationView: View {
                 Spacer()
                 
                 VStack {
-                    Text("\(Int(self.locationAgent.speed))")
+                    Text("\(Int(self.locationAgent.speed.value))")
                         .font(Font.system(size: 60, weight: .bold, design: .default))
-                        .foregroundColor(self.locationAgent.speed >= 100 ? Color.red : Color(UIColor.label))
+                        .foregroundColor(self.locationAgent.speed.converted(to: .kilometersPerHour).value >= 100 ? Color.red : Color(UIColor.label))
                     
                     Text("Km/h")
                         .font(Font.system(size: 30))
-                        .foregroundColor(self.locationAgent.speed >= 100 ? Color.red : Color(UIColor.label))
+                        .foregroundColor(self.locationAgent.speed.converted(to: .kilometersPerHour).value >= 100 ? Color.red : Color(UIColor.label))
                 }
                 
                 

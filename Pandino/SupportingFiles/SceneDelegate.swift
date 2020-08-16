@@ -23,6 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
+        let speedWatchAgent = SpeedWatchAgent(locationManager: self.locationHelper)
+        
         weatherAgent.locationManager = locationHelper
         
         // Create the SwiftUI view that provides the window contents.
@@ -31,6 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .environmentObject(locationHelper)
             .environmentObject(weatherAgent)
             .environmentObject(mapAgent)
+            .environmentObject(speedWatchAgent)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

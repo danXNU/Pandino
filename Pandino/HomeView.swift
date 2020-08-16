@@ -13,6 +13,7 @@ struct HomeView: View {
     @EnvironmentObject var widgetAgent: WidgetAgent
     @EnvironmentObject var locationAgent: TeslaLocationManager
     @EnvironmentObject var weatherAgent: WeatherAgent
+    @EnvironmentObject var speedWatchAgent: SpeedWatchAgent
     
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275),
                                                    span: .init(latitudeDelta: 0.1, longitudeDelta: 0.1))
@@ -62,7 +63,7 @@ struct HomeView: View {
                     }
                     else if self.widgetAgent.selectedWidget == .timer {
                         
-                        TimerWidget().widgetify(title: WidgetType.timer.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
+                        TimerWidget(speedWatchAgent: self.speedWatchAgent).widgetify(title: WidgetType.timer.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
                             
                             .frame(minWidth: 350, minHeight: 350)
                             .frame(width: geo.size.width * 0.6, height: geo.size.height * 0.6)

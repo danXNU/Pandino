@@ -24,6 +24,7 @@
 		DBB9A36D23CA7D51000C85C8 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB9A36C23CA7D51000C85C8 /* BottomBar.swift */; };
 		DBD24B7E23B4265900DBB6FD /* SettingsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD24B7D23B4265900DBB6FD /* SettingsWidget.swift */; };
 		DBD8C3A824E76161004A8FBE /* TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8C3A724E76161004A8FBE /* TimerWidget.swift */; };
+		DBD8C3AA24E77A43004A8FBE /* SpeedWatchAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8C3A924E77A43004A8FBE /* SpeedWatchAgent.swift */; };
 		DBDA411423B28A3B00EE40CD /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA411323B28A3B00EE40CD /* Widget.swift */; };
 		DBDA411623B2E3A400EE40CD /* CarNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA411523B2E3A400EE40CD /* CarNavigationView.swift */; };
 		DBF3D01F247B2AF300B6E6B7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3D01E247B2AF300B6E6B7 /* Notifications.swift */; };
@@ -67,6 +68,7 @@
 		DBB9A36C23CA7D51000C85C8 /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		DBD24B7D23B4265900DBB6FD /* SettingsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWidget.swift; sourceTree = "<group>"; };
 		DBD8C3A724E76161004A8FBE /* TimerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWidget.swift; sourceTree = "<group>"; };
+		DBD8C3A924E77A43004A8FBE /* SpeedWatchAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedWatchAgent.swift; sourceTree = "<group>"; };
 		DBDA411323B28A3B00EE40CD /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
 		DBDA411523B2E3A400EE40CD /* CarNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarNavigationView.swift; sourceTree = "<group>"; };
 		DBF3D01E247B2AF300B6E6B7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				DB81EA9A242BBC320033D57E /* Extensions.swift */,
 				DBF3D01E247B2AF300B6E6B7 /* Notifications.swift */,
 				DBF3D020247B2B7C00B6E6B7 /* SavedProperties.swift */,
+				DBD8C3A924E77A43004A8FBE /* SpeedWatchAgent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				DB96135823B188A6008BEC34 /* HomeView.swift in Sources */,
 				DB68B88623C65745008A8E51 /* WeatherAgent.swift in Sources */,
 				DB64968E23CCBE2C009036A2 /* MusicWidget.swift in Sources */,
+				DBD8C3AA24E77A43004A8FBE /* SpeedWatchAgent.swift in Sources */,
 				DBFB2F2A23AC340D001027D3 /* SceneDelegate.swift in Sources */,
 				DBF3D01F247B2AF300B6E6B7 /* Notifications.swift in Sources */,
 				DB66D23523C612410027BCDF /* LocationManager.swift in Sources */,

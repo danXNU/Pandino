@@ -15,7 +15,7 @@ class TeslaLocationManager: NSObject, CLLocationManagerDelegate, ObservableObjec
     @Published var northDirection: Double = 0
     @Published var longitudine: Double = 0
     @Published var latitudine: Double = 0
-    @Published var speed: Double = 0
+    @Published var speed: Measurement<UnitSpeed> = .init(value: 0, unit: .milesPerHour)
     
     @Published var animateToUserLocation: Bool = false
     
@@ -48,7 +48,7 @@ class TeslaLocationManager: NSObject, CLLocationManagerDelegate, ObservableObjec
         guard let location = locations.last else { return }
         self.latitudine = location.coordinate.latitude
         self.longitudine = location.coordinate.longitude
-        self.speed = location.speed <= 0 ? 0.0 : location.speed * 3.6
+        self.speed = .init(value: location.speed <= 0 ? 0.0 : location.speed, unit: .milesPerHour)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
