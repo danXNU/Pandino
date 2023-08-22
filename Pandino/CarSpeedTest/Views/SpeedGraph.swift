@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct ChartView: View {
     
@@ -19,35 +20,45 @@ struct ChartView: View {
     
     var body: some View {
         ZStack(alignment: Alignment.bottomLeading) {
-            HStack {
-                
-                VStack {
-                    Text("\(Int(maxSpeed))")
-                    Spacer()
-                    Text(String(format: "%1.f", maxSpeed / 2))
-                    Spacer()
-                    Text(String(format: "%1.f", minSpeed))
+            if #available(iOS 16, *) {
+                Chart(dataPoints, id: \.id) { dataPoint in
+                    LineMark(x: .value("Time", dataPoint.timeOffset),
+                             y: .value("Speed", dataPoint.value.value))
+                    .lineStyle(StrokeStyle(lineWidth: 2))
+                    .foregroundStyle(Color.blue.gradient)
+                    .interpolationMethod(InterpolationMethod.cardinal)
                 }
-                .padding(.bottom)
-                
-                VStack {
-                    ZStack {
-                        ChartLinesShape()
-                            .stroke(Color.red, style: StrokeStyle(lineWidth: 5))
-                        
-                        LineChartShape(max: Int(maxSpeed), points: points)
-                            .stroke(style: StrokeStyle(lineWidth: 5))
-                            .frame(maxWidth: .infinity)
-//                            .overlay(Rectangle().stroke(Color.purple))
+            } else {
+                HStack {
+
+                    VStack {
+                        Text("\(Int(maxSpeed))")
+                        Spacer()
+                        Text(String(format: "%1.f", maxSpeed / 2))
+                        Spacer()
+                        Text(String(format: "%1.f", minSpeed))
                     }
-                    
-                    
-                    HStack {
-                        Text("0")
-                        Spacer()
-                        Text(halfTimeOffset)
-                        Spacer()
-                        Text(timeOffset)
+                    .padding(.bottom)
+
+                    VStack {
+                        ZStack {
+                            ChartLinesShape()
+                                .stroke(Color.red, style: StrokeStyle(lineWidth: 5))
+
+                            LineChartShape(max: Int(maxSpeed), points: points)
+                                .stroke(style: StrokeStyle(lineWidth: 5))
+                                .frame(maxWidth: .infinity)
+    //                            .overlay(Rectangle().stroke(Color.purple))
+                        }
+
+
+                        HStack {
+                            Text("0")
+                            Spacer()
+                            Text(halfTimeOffset)
+                            Spacer()
+                            Text(timeOffset)
+                        }
                     }
                 }
             }
