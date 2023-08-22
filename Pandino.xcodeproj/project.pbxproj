@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4438E96E266036B800C99CF1 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E96D266036B800C99CF1 /* Stopwatch.swift */; };
+		4438E9952660377400C99CF1 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9732660377300C99CF1 /* UIApplication+Extension.swift */; };
+		4438E9962660377400C99CF1 /* Auth+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9742660377300C99CF1 /* Auth+Extension.swift */; };
+		4438E9972660377400C99CF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4438E9752660377300C99CF1 /* Assets.xcassets */; };
+		4438E9982660377400C99CF1 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9762660377300C99CF1 /* FileManager+Extension.swift */; };
+		4438E9992660377400C99CF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4438E9782660377300C99CF1 /* Preview Assets.xcassets */; };
+		4438E99A2660377400C99CF1 /* Car_SpeedTest_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9792660377300C99CF1 /* Car_SpeedTest_App.swift */; };
+		4438E99C2660377400C99CF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E97B2660377300C99CF1 /* ContentView.swift */; };
+		4438E99D2660377400C99CF1 /* SpeedAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E97D2660377400C99CF1 /* SpeedAgent.swift */; };
+		4438E99E2660377400C99CF1 /* RaceSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E97E2660377400C99CF1 /* RaceSaver.swift */; };
+		4438E99F2660377400C99CF1 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E97F2660377400C99CF1 /* Race.swift */; };
+		4438E9A02660377400C99CF1 /* SpeedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9802660377400C99CF1 /* SpeedError.swift */; };
+		4438E9A12660377400C99CF1 /* CLAgentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9812660377400C99CF1 /* CLAgentError.swift */; };
+		4438E9A22660377400C99CF1 /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9822660377400C99CF1 /* DataPoint.swift */; };
+		4438E9A32660377400C99CF1 /* RaceSpeedsValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9832660377400C99CF1 /* RaceSpeedsValuesView.swift */; };
+		4438E9A42660377400C99CF1 /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9842660377400C99CF1 /* RaceView.swift */; };
+		4438E9A52660377400C99CF1 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9862660377400C99CF1 /* ButtonStyles.swift */; };
+		4438E9A62660377400C99CF1 /* MetricType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9882660377400C99CF1 /* MetricType.swift */; };
+		4438E9A72660377400C99CF1 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E98A2660377400C99CF1 /* RangeSlider.swift */; };
+		4438E9A82660377400C99CF1 /* SendEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E98B2660377400C99CF1 /* SendEmailView.swift */; };
+		4438E9A92660377400C99CF1 /* Speedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E98C2660377400C99CF1 /* Speedometer.swift */; };
+		4438E9AA2660377400C99CF1 /* SpeedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E98D2660377400C99CF1 /* SpeedGraph.swift */; };
+		4438E9AB2660377400C99CF1 /* RaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E98F2660377400C99CF1 /* RaceViewModel.swift */; };
+		4438E9AC2660377400C99CF1 /* SpeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9902660377400C99CF1 /* SpeedViewModel.swift */; };
+		4438E9AD2660377400C99CF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9922660377400C99CF1 /* Constants.swift */; };
+		4438E9AE2660377400C99CF1 /* RaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9932660377400C99CF1 /* RaceListView.swift */; };
+		4438E9AF2660377400C99CF1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4438E9942660377400C99CF1 /* SettingsView.swift */; };
 		DB64968E23CCBE2C009036A2 /* MusicWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64968D23CCBE2C009036A2 /* MusicWidget.swift */; };
 		DB66D23323C60E2B0027BCDF /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB66D23223C60E2B0027BCDF /* TopBar.swift */; };
 		DB66D23523C612410027BCDF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB66D23423C612410027BCDF /* LocationManager.swift */; };
@@ -51,6 +78,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4438E96D266036B800C99CF1 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		4438E9732660377300C99CF1 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		4438E9742660377300C99CF1 /* Auth+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Auth+Extension.swift"; sourceTree = "<group>"; };
+		4438E9752660377300C99CF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4438E9762660377300C99CF1 /* FileManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		4438E9782660377300C99CF1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4438E9792660377300C99CF1 /* Car_SpeedTest_App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car_SpeedTest_App.swift; sourceTree = "<group>"; };
+		4438E97B2660377300C99CF1 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4438E97D2660377400C99CF1 /* SpeedAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedAgent.swift; sourceTree = "<group>"; };
+		4438E97E2660377400C99CF1 /* RaceSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceSaver.swift; sourceTree = "<group>"; };
+		4438E97F2660377400C99CF1 /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
+		4438E9802660377400C99CF1 /* SpeedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedError.swift; sourceTree = "<group>"; };
+		4438E9812660377400C99CF1 /* CLAgentError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLAgentError.swift; sourceTree = "<group>"; };
+		4438E9822660377400C99CF1 /* DataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPoint.swift; sourceTree = "<group>"; };
+		4438E9832660377400C99CF1 /* RaceSpeedsValuesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceSpeedsValuesView.swift; sourceTree = "<group>"; };
+		4438E9842660377400C99CF1 /* RaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
+		4438E9862660377400C99CF1 /* ButtonStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		4438E9882660377400C99CF1 /* MetricType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricType.swift; sourceTree = "<group>"; };
+		4438E98A2660377400C99CF1 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
+		4438E98B2660377400C99CF1 /* SendEmailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendEmailView.swift; sourceTree = "<group>"; };
+		4438E98C2660377400C99CF1 /* Speedometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speedometer.swift; sourceTree = "<group>"; };
+		4438E98D2660377400C99CF1 /* SpeedGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedGraph.swift; sourceTree = "<group>"; };
+		4438E98F2660377400C99CF1 /* RaceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceViewModel.swift; sourceTree = "<group>"; };
+		4438E9902660377400C99CF1 /* SpeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedViewModel.swift; sourceTree = "<group>"; };
+		4438E9922660377400C99CF1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4438E9932660377400C99CF1 /* RaceListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceListView.swift; sourceTree = "<group>"; };
+		4438E9942660377400C99CF1 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DB64968D23CCBE2C009036A2 /* MusicWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicWidget.swift; sourceTree = "<group>"; };
 		DB66D23223C60E2B0027BCDF /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		DB66D23423C612410027BCDF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -107,6 +161,110 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4438E96F266036D400C99CF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4438E9712660374A00C99CF1 /* CarSpeedTest */ = {
+			isa = PBXGroup;
+			children = (
+				4438E97B2660377300C99CF1 /* ContentView.swift */,
+				4438E9912660377400C99CF1 /* Generic */,
+				4438E97C2660377400C99CF1 /* Model */,
+				4438E9932660377400C99CF1 /* RaceListView.swift */,
+				4438E9832660377400C99CF1 /* RaceSpeedsValuesView.swift */,
+				4438E9842660377400C99CF1 /* RaceView.swift */,
+				4438E9942660377400C99CF1 /* SettingsView.swift */,
+				4438E9852660377400C99CF1 /* Styles */,
+				4438E9722660377300C99CF1 /* SupportingFiles */,
+				4438E9872660377400C99CF1 /* SupportingTypes */,
+				4438E98E2660377400C99CF1 /* ViewModel */,
+				4438E9892660377400C99CF1 /* Views */,
+			);
+			path = CarSpeedTest;
+			sourceTree = "<group>";
+		};
+		4438E9722660377300C99CF1 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4438E9732660377300C99CF1 /* UIApplication+Extension.swift */,
+				4438E9742660377300C99CF1 /* Auth+Extension.swift */,
+				4438E9752660377300C99CF1 /* Assets.xcassets */,
+				4438E9762660377300C99CF1 /* FileManager+Extension.swift */,
+				4438E9772660377300C99CF1 /* Preview Content */,
+				4438E9792660377300C99CF1 /* Car_SpeedTest_App.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		4438E9772660377300C99CF1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4438E9782660377300C99CF1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4438E97C2660377400C99CF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4438E97D2660377400C99CF1 /* SpeedAgent.swift */,
+				4438E97E2660377400C99CF1 /* RaceSaver.swift */,
+				4438E97F2660377400C99CF1 /* Race.swift */,
+				4438E9802660377400C99CF1 /* SpeedError.swift */,
+				4438E9812660377400C99CF1 /* CLAgentError.swift */,
+				4438E9822660377400C99CF1 /* DataPoint.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4438E9852660377400C99CF1 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				4438E9862660377400C99CF1 /* ButtonStyles.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		4438E9872660377400C99CF1 /* SupportingTypes */ = {
+			isa = PBXGroup;
+			children = (
+				4438E9882660377400C99CF1 /* MetricType.swift */,
+			);
+			path = SupportingTypes;
+			sourceTree = "<group>";
+		};
+		4438E9892660377400C99CF1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4438E98A2660377400C99CF1 /* RangeSlider.swift */,
+				4438E98B2660377400C99CF1 /* SendEmailView.swift */,
+				4438E98C2660377400C99CF1 /* Speedometer.swift */,
+				4438E98D2660377400C99CF1 /* SpeedGraph.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4438E98E2660377400C99CF1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4438E98F2660377400C99CF1 /* RaceViewModel.swift */,
+				4438E9902660377400C99CF1 /* SpeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4438E9912660377400C99CF1 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				4438E9922660377400C99CF1 /* Constants.swift */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
 		DB6C437F23B8F1D6001A2E06 /* MapView */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +309,7 @@
 				DB66D23823C62EA30027BCDF /* CoordinateWidget.swift */,
 				DB68B88723C67C04008A8E51 /* WeatherWidget.swift */,
 				DB64968D23CCBE2C009036A2 /* MusicWidget.swift */,
+				4438E96D266036B800C99CF1 /* Stopwatch.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -161,6 +320,7 @@
 				DBFB2F2623AC340D001027D3 /* Pandino */,
 				DBFB2F3D23AC340E001027D3 /* PandinoTests */,
 				DBFB2F2523AC340D001027D3 /* Products */,
+				4438E96F266036D400C99CF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +336,7 @@
 		DBFB2F2623AC340D001027D3 /* Pandino */ = {
 			isa = PBXGroup;
 			children = (
+				4438E9712660374A00C99CF1 /* CarSpeedTest */,
 				DBB9A36923CA62D9000C85C8 /* Pandino.entitlements */,
 				DB6C438223B902AC001A2E06 /* Models */,
 				DB8E9C8623B3F172004726DD /* Widgets */,
@@ -309,6 +470,8 @@
 			files = (
 				DBFB2F3423AC340E001027D3 /* LaunchScreen.storyboard in Resources */,
 				DBFB2F3123AC340E001027D3 /* Preview Assets.xcassets in Resources */,
+				4438E9992660377400C99CF1 /* Preview Assets.xcassets in Resources */,
+				4438E9972660377400C99CF1 /* Assets.xcassets in Resources */,
 				DBFB2F2E23AC340E001027D3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,29 +491,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB96135A23B195B1008BEC34 /* CloseButton.swift in Sources */,
+				4438E9A12660377400C99CF1 /* CLAgentError.swift in Sources */,
 				DB8E9C8823B3F1A6004726DD /* InfoWidget.swift in Sources */,
+				4438E9A02660377400C99CF1 /* SpeedError.swift in Sources */,
+				4438E99C2660377400C99CF1 /* ContentView.swift in Sources */,
+				4438E9AE2660377400C99CF1 /* RaceListView.swift in Sources */,
 				DB66D23723C61D780027BCDF /* Bussola.swift in Sources */,
 				DB8A6C5C2479B092005B36A0 /* GPSClient.swift in Sources */,
 				DBF3D021247B2B7C00B6E6B7 /* SavedProperties.swift in Sources */,
 				DBD24B7E23B4265900DBB6FD /* SettingsWidget.swift in Sources */,
+				4438E9952660377400C99CF1 /* UIApplication+Extension.swift in Sources */,
+				4438E9A32660377400C99CF1 /* RaceSpeedsValuesView.swift in Sources */,
 				DB8E9C8123B3DE23004726DD /* MapView.swift in Sources */,
+				4438E9AC2660377400C99CF1 /* SpeedViewModel.swift in Sources */,
 				DB66D23323C60E2B0027BCDF /* TopBar.swift in Sources */,
 				DBDA411623B2E3A400EE40CD /* CarNavigationView.swift in Sources */,
 				DB6C437E23B8ED7A001A2E06 /* FariWidget.swift in Sources */,
+				4438E9A42660377400C99CF1 /* RaceView.swift in Sources */,
+				4438E9A22660377400C99CF1 /* DataPoint.swift in Sources */,
+				4438E9982660377400C99CF1 /* FileManager+Extension.swift in Sources */,
 				DBFB2F2823AC340D001027D3 /* AppDelegate.swift in Sources */,
 				DB81EA9B242BBC320033D57E /* Extensions.swift in Sources */,
 				DB96135823B188A6008BEC34 /* HomeView.swift in Sources */,
+				4438E96E266036B800C99CF1 /* Stopwatch.swift in Sources */,
 				DB68B88623C65745008A8E51 /* WeatherAgent.swift in Sources */,
+				4438E9A62660377400C99CF1 /* MetricType.swift in Sources */,
 				DB64968E23CCBE2C009036A2 /* MusicWidget.swift in Sources */,
+				4438E9A72660377400C99CF1 /* RangeSlider.swift in Sources */,
+				4438E9AA2660377400C99CF1 /* SpeedGraph.swift in Sources */,
+				4438E99D2660377400C99CF1 /* SpeedAgent.swift in Sources */,
+				4438E9A82660377400C99CF1 /* SendEmailView.swift in Sources */,
 				DBFB2F2A23AC340D001027D3 /* SceneDelegate.swift in Sources */,
+				4438E9AB2660377400C99CF1 /* RaceViewModel.swift in Sources */,
+				4438E9A52660377400C99CF1 /* ButtonStyles.swift in Sources */,
 				DBF3D01F247B2AF300B6E6B7 /* Notifications.swift in Sources */,
+				4438E99A2660377400C99CF1 /* Car_SpeedTest_App.swift in Sources */,
 				DB66D23523C612410027BCDF /* LocationManager.swift in Sources */,
 				DB8E9C8523B3ECB1004726DD /* WidgetAgent.swift in Sources */,
 				DB68B88823C67C04008A8E51 /* WeatherWidget.swift in Sources */,
+				4438E9AF2660377400C99CF1 /* SettingsView.swift in Sources */,
 				DBB9A36B23CA78A0000C85C8 /* MapAgent.swift in Sources */,
+				4438E9A92660377400C99CF1 /* Speedometer.swift in Sources */,
 				DB81EA99242BB7270033D57E /* LightsModel.swift in Sources */,
+				4438E9962660377400C99CF1 /* Auth+Extension.swift in Sources */,
+				4438E99F2660377400C99CF1 /* Race.swift in Sources */,
 				DBB9A36D23CA7D51000C85C8 /* BottomBar.swift in Sources */,
+				4438E99E2660377400C99CF1 /* RaceSaver.swift in Sources */,
 				DB66D23923C62EA30027BCDF /* CoordinateWidget.swift in Sources */,
+				4438E9AD2660377400C99CF1 /* Constants.swift in Sources */,
 				DBFB2F2C23AC340D001027D3 /* ConsumiWidgetView.swift in Sources */,
 				DBDA411423B28A3B00EE40CD /* Widget.swift in Sources */,
 			);
@@ -512,6 +700,7 @@
 				DEVELOPMENT_TEAM = R779A64KR9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Pandino/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -536,6 +725,7 @@
 				DEVELOPMENT_TEAM = R779A64KR9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Pandino/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

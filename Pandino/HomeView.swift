@@ -144,9 +144,22 @@ struct HomeView: View {
                         .frame(width: geo.size.width * 0.6, height: geo.size.height * 0.6)
                         .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
                         .animation(.easeIn)
+                    } else if self.widgetAgent.selectedWidget == .stopwatch {
+                        ContentView()
+                            .widgetify(title: WidgetType.stopwatch.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
+                    
+                    .frame(minWidth: 350, minHeight: 350)
+                    .frame(width: geo.size.width * 0.6, height: geo.size.height * 0.6)
+                    .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
+                    .animation(.easeIn)
+                    } else if self.widgetAgent.selectedWidget == .todo {
+                        TodoView()
+                            .widgetify(title: WidgetType.todo.widgetBarTitle, closeAction: self.widgetAgent.closeWidget)
+                            .frame(minWidth: 350, minHeight: 350)
+                            .frame(width: geo.size.width * 0.6, height: geo.size.height * 0.6)
+                            .offset(x: 0, y: self.widgetAgent.widgetOffset.height)
+                            .animation(.easeIn)
                     }
-                    
-                    
                 }
                 
             }

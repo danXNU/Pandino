@@ -129,7 +129,7 @@ class LightsManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     private var timer: Timer?
     
     @Published var isPoweredOn: Bool = false
-    @Published var isConnected: Bool = false
+    @Published var isConnected: Bool = true
     @Published var isEstablishingConnection: Bool = false
     
     @Published var brightnessLevel : Int = 2
@@ -154,17 +154,17 @@ class LightsManager: NSObject, ObservableObject, CBCentralManagerDelegate {
                                                 0x00, 0x00, 0x00, 0xab])
         
         if let characteristic = self.readCharacteristic, let periph = self.lighsPeripheral, self.isConnected == true {
-            service?.peripheral.writeValue(writeMessage, for: characteristic, type: .withoutResponse)
+            service?.peripheral?.writeValue(writeMessage, for: characteristic, type: .withoutResponse)
             periph.readValue(for: characteristic)
         }
     }
     
     public func write(msgData msg: Data) {
-        service?.peripheral.writeValue(msg, for: writeCharacteristic!, type: .withoutResponse)
+        service?.peripheral?.writeValue(msg, for: writeCharacteristic!, type: .withoutResponse)
     }
     
     public func toggleLedStatus() {
-        service?.peripheral.writeValue(isPoweredOn ? powerOffDataMessage : powerOnDataMessage, for: writeCharacteristic!, type: .withoutResponse)
+        service?.peripheral?.writeValue(isPoweredOn ? powerOffDataMessage : powerOnDataMessage, for: writeCharacteristic!, type: .withoutResponse)
         
         isPoweredOn.toggle() // per adesso deve essere manuale. In seguito verrà aggiunto un handle per ricevere lo stato dei led direttamente da loro
     }

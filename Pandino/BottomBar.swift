@@ -14,46 +14,66 @@ struct BottomBar: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                        Rectangle()
-                            .fill(Color(UIColor.systemBackground))
-                        
-                        HStack(spacing: 20) {
-                            Image(systemName: "gear")
-                            .resizable()
-                            .foregroundColor(Color.gray.opacity(1.0))
-                            .frame(width: 50, height: 50)
-            //                .offset(x: 20, y: 0)
-                            .onTapGesture {
-                                self.widgetAgent.toggle(with: .settings)
-                            }
-                            
-                            
-                            
-                            
-                            Image(systemName: "music.note")
-                            .resizable()
-                            .aspectRatio(contentMode: ContentMode.fit)
-                            .foregroundColor(Color.gray.opacity(1.0))
-                                .frame(height: geo.size.height / 2)
-                            .onTapGesture {
-                                self.widgetAgent.toggle(with: .music)
-                            }
-                            
-                            
-                            
-                            Image(systemName: "info.circle")
-                            .resizable()
-                            .foregroundColor(Color.gray)
-                            .frame(width: 50, height: 50)
-            //                .offset(x: -20, y: 0)
-                            .onTapGesture {
-                                self.widgetAgent.toggle(with: .info)
-                            }
-                            
-                            Spacer()
+                Rectangle()
+                    .fill(Color(UIColor.systemBackground))
+                
+                HStack(spacing: 20) {
+                    Image(systemName: "gear")
+                        .resizable()
+                        .foregroundColor(Color.gray.opacity(1.0))
+                        .frame(width: 50, height: 50)
+                        //                .offset(x: 20, y: 0)
+                        .onTapGesture {
+                            self.widgetAgent.toggle(with: .settings)
                         }
-                        .offset(x: 20, y: 0)
-                    }
+                    
+                    
+                    
+                    
+                    Image(systemName: "music.note")
+                        .resizable()
+                        .aspectRatio(contentMode: ContentMode.fit)
+                        .foregroundColor(Color.gray.opacity(1.0))
+                        .frame(height: geo.size.height / 2)
+                        .onTapGesture {
+                            self.widgetAgent.toggle(with: .music)
+                        }
+                    
+                    
+                    
+                    Image(systemName: "info.circle")
+                        .resizable()
+                        .foregroundColor(Color.gray)
+                        .frame(width: 50, height: 50)
+                        //                .offset(x: -20, y: 0)
+                        .onTapGesture {
+                            self.widgetAgent.toggle(with: .info)
+                        }
+                    
+                    
+                    Spacer()
+                    
+                    Image(systemName: "hammer.fill")
+                        .resizable()
+                        .foregroundColor(Color.gray)
+                        .frame(width: 50, height: 50)
+                        .offset(x: -40, y: 0)
+                        .onTapGesture {
+                            self.widgetAgent.toggle(with: .todo)
+                        }
+                    
+                    
+                    Image(systemName: "stopwatch")
+                        .resizable()
+                        .foregroundColor(Color.gray)
+                        .frame(width: 50, height: 50)
+                        .offset(x: -40, y: 0)
+                        .onTapGesture {
+                            self.widgetAgent.toggle(with: .stopwatch)
+                        }
+                }
+                .offset(x: 20, y: 0)
+            }
         }
         
         
